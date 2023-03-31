@@ -13,13 +13,19 @@
 
 /*-----------HEADER----*/
 /*------------------------*/
+.container-fluid{
+background-color: rgb(24, 26, 26);
+
+}
 header {
     min-width: auto;
 }
 
 #filaHeader {
-    width: 100%;
+    width: 100vw;
     background-color: rgba(15, 147, 191, 0.381);
+    position: absolute;
+
 }
 
 .left {
@@ -45,9 +51,7 @@ header {
 
 }
 
-.container-fluid{
-background-color: rgb(24, 26, 26);
-}
+
 
 /*---------ARTICLE---------*/
 /*-----------------------------------*/
@@ -56,7 +60,7 @@ background-color: rgb(24, 26, 26);
 }
 
 #fotoperfil {
-    border-radius: 100%;
+    border-radius: 50%;
     height: 100%;
     width: 100%;
     position: relative;
@@ -64,7 +68,7 @@ background-color: rgb(24, 26, 26);
 }
 
 #acercaDe {
-    border: rgb(196, 28, 16) 5px solid;
+   /*  border: rgb(196, 28, 16) 5px solid; */
     position: relative;
     /*    bottom: 8em; */
 
@@ -74,20 +78,24 @@ article {
     display: flex;
     position: relative;
     justify-content: center;
-    padding-left: 50px;
-    bottom: 100px;
+    padding-left: 10px;
+    bottom: 90px;
 }
 
 /*----------MAIN----------*/
 /*-------------------------*/
 
 main {
-    background-color: grey;
+    background-color: black;
 }
 .miEducacion{
     display: flex;
     justify-content: flex-end;
     align-items: end;
+    
+        text-align: right;
+
+    
 
 }
 #logoFamaf{
@@ -98,4 +106,128 @@ main {
     display: flex;
     justify-content: flex-end;
     background-color: blanchedalmond;
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    bottom: 120px;
+
+}
+#a-pro{
+    display: inline-flex;
+    align-items: end;
+}
+
+#a-famaf{
+    display: inline-flex;
+    align-content: end;
+}
+
+
+/* <!-------HARD SKILLS-------- --> */
+/* 
+svg{width:10%;} */
+/* #svg1 {
+    position: relative;
+  }
+  
+  #svg1 text:first-child {
+    height: 10px;
+  }
+  
+  #porcentaje-Bootstrap{
+    position: absolute;
+    top: 40px;
+  } */
+  .section-HardSkills {
+display: inline-flex;
+justify-content: space-between;
+align-self: flex-start;
+align-items: center;
+position: relative;
+bottom: 170px;
+background-color: rgb(28, 96, 99);
+  }
+  .section-HardSkillsh1 {
+    display: inline-flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    align-items: center;
+    position: relative;
+    bottom: 170px;
+    background-color: black;
+      }
+#svg1{
+    width: 10%;
+}
+#svg2{
+    width: 10%;
+}
+#svg3{
+    width: 10%;
+}
+#svg4{
+    width: 10%;
+}
+#svg5{
+    width: 10%;
+}
+#svg6{
+    width: 10%;
+}
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 992px) {
+    .fig {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    .fig {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 575px) {
+    .fig {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .acercaDeMi {
+        text-align: center;
+    }
+}
+
+
+/* aaafssgas */
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 992px) {
+   
+/* Estilos para pantallas medianas y pequeñas */
+@media screen and (max-width: 991px) {
+    .miExperiencia {
+        float: left;
+        width: 30%;
+        margin-right: 5%;
+    }
+
+    .miEducacion {
+        float: left;
+        width: 65%;
+    }
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 575px) {
+    .miExperiencia, .miEducacion {
+        width: 100%;
+    }
 }
