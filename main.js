@@ -19,4 +19,18 @@ var data = [
     var dasharrayValue = (circumference * skillValue) / 100 + " " + circumference;
     circles[i].setAttribute("stroke-dasharray", dasharrayValue);
   }
-  
+
+
+/* ----------------------------loginButton-------------------------- */
+  const loginButton = document.getElementById('login-button');
+
+// Si el usuario está conectado, agregue el botón de cierre de sesión
+if (userIsLoggedIn) {
+  loginButton.innerHTML = '<button onclick="logout()">Cerrar sesión</button>';
+}
+// Si el usuario no está conectado, agregue el botón de inicio de sesión
+else {
+  loginButton.innerHTML = '<button onclick="login()">Iniciar sesión</button>';
+}
+
+
