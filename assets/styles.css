@@ -204,112 +204,68 @@ main {
     transition: transform 0.5s ease-out;
     border: white solid 3px;
 }
+  /* Agrega tus estilos CSS aquí */
+        /* <!-------SOFT SKILLS-------- --> */
+        .soft-skills ul {
+            position: relative;
+            bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-/* <!-------SOFT SKILLS-------- --> */
-.soft-skills ul{
-    position: relative;
-    bottom: 50px;
-display: flex;
-flex-wrap: wrap;
-gap: 30px;
-}
-.soft-skills h1{
-    display: flex;
-    position: relative;
-    bottom: 50px;
-}
+        .soft-skills h1 {
+            display: flex;
+            position: relative;
+            bottom: 50px;
+        }
 
+        /* <!-------HARD SKILLS-------- --> */
+        .section-HardSkills {
+            background-color: rgb(28, 96, 99);
+            position: relative;
+            bottom: 50px;
+        }
 
+        .hardup {
+            display: flex;
+            justify-content: space-between;
+        }
 
+        .harddown {
+            display: flex;
+            position: relative;
+            display: inline-flex;
+        }
 
-/* <!-------HARD SKILLS-------- --> */
-.section-HardSkills{
-    background-color: rgb(28, 96, 99);
-    position: relative;
-    bottom: 50px;
+        .section-HardSkillsh1 {
+            position: relative;
+            background-color: black;
+            text-align: end;
+            color: darkslategray;
+        }
 
-}
-.hardup{
-    display: flex;
-       justify-content: space-between ; 
-}
-.harddown{
-display: flex;
-position: relative;
-display: inline-flex;
+        .skill-progress {
+            width: 70%;
+        }
 
-   
+        #svg1, #svg2, #svg3, #svg4, #svg5, #svg6, .skill-progress {
+            width: 70%;
+        }
 
-}
+        @media only screen and (max-width: 767px) {
+            .section-HardSkills {
+                height: 300px;
+            }
 
-.section-HardSkillsh1 {
-    position: relative;
-    /* bottom: 60px; */
-    background-color: black;
-    text-align: end;
-    color: darkslategray;
-}
+            .skill-progress {
+                width: 200%;
+            }
 
-/* .section-HardSkills h1:hover~.section-HardSkills {
-    transform: scale(1.7);
-    transition: all 0.3s ease-in-out;
-} */
-
-#svg1 {
-    width: 70%;
-}
-
-#svg2 {
-    width: 70%;
-}
-
-#svg3 {
-    width: 70%;
-}
-
-#svg4 {
-    width: 70%;
-}
-
-#svg5 {
-    width: 70%;
-}
-
-#svg6 {
-    width: 70%;
-}
-
-@media only screen and (max-width: 767px) {
-.section-HardSkills{
-    height: 300px;
-}
-#svg1{
-    width: 200%;
-    height: 100%;
-
-}
-
-#svg2 {
-    width: 200%;
-}
-
-#svg3 {
-    width: 100%;
-}
-
-#svg4 {
-    width: 200%;
-}
-
-#svg5 {
-    width: 200%;
-}
-
-#svg6 {
-    width: 200%;
-}
-
-  }
+            #svg1, #svg2, #svg3, #svg4, #svg5, #svg6, .skill-progress {
+                width: 200%;
+            }
+        }
   
 /* PROYECTOS */
 .proyectos {
