@@ -221,7 +221,7 @@ main {
         }
 
         /* <!-------HARD SKILLS-------- --> */
-        .section-HardSkills {
+         .section-HardSkills {
             background-color: rgb(28, 96, 99);
             position: relative;
             bottom: 50px;
@@ -298,3 +298,8 @@ main {
 .proyectos-table a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
