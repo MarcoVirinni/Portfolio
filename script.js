@@ -105,27 +105,27 @@ for (const skill of skillsData) {
 
   skillsContainer.innerHTML += htmlSkill;
 }
- // Clona solo la cantidad necesaria de elementos para crear un bucle
- const originalContent = skillsContainer.innerHTML;
- const numClones = Math.ceil(skillsCarousel.offsetWidth / skillsContainer.offsetWidth);
- for (let i = 0; i < numClones; i++) {
-   skillsContainer.innerHTML += originalContent;
- }
+  // Clona solo la cantidad necesaria de elementos para crear una cinta continua
+  const originalContent = skillsContainer.innerHTML;
+  const numClones = Math.ceil(skillsCarousel.offsetWidth / skillsContainer.offsetWidth);
+  for (let i = 0; i < numClones; i++) {
+    skillsContainer.innerHTML += originalContent;
+  }
 
- // Configura el tamaño del contenedor del carrusel
- skillsCarousel.style.width = `${(skillsData.length + numClones) * 200}px`;
+  // Configura el tamaño del contenedor del carrusel
+  skillsCarousel.style.width = `${(skillsData.length + numClones) * 200}px`; // Ajusta según tus necesidades
 
- // Función para animar el carrusel
- function animateCarousel() {
-   const scrollAmount = 1; // Puedes ajustar la velocidad de desplazamiento
-   skillsCarousel.scrollLeft += scrollAmount;
+  // Función para animar el carrusel
+  function animateCarousel() {
+    const scrollAmount = 1; // Puedes ajustar la velocidad de desplazamiento
+    skillsCarousel.scrollLeft += scrollAmount;
 
-   // Reinicia al inicio cuando llega al final del contenido clonado
-   if (skillsCarousel.scrollLeft >= skillsContainer.offsetWidth) {
-     skillsCarousel.scrollLeft -= skillsContainer.offsetWidth;
-   }
- }
+    // Cuando llega al final, ajusta el desplazamiento para mantener la cinta continua
+    if (skillsCarousel.scrollLeft >= skillsContainer.offsetWidth * (skillsData.length + numClones - 1)) {
+      skillsCarousel.scrollLeft -= skillsContainer.offsetWidth;
+    }
+  }
 
- // Inicia la animación del carrusel
- setInterval(animateCarousel, 5); // Puedes ajustar el intervalo de tiempo
+  // Inicia la animación del carrusel
+  setInterval(animateCarousel, 10); // Puedes ajustar el intervalo de tiempo
 });
