@@ -1,71 +1,3 @@
-/* // Datos de habilidades
-var data = [
-    {label: "HTML", value: 50},
-    {label: "CSS", value: 50},
-    {label: "Bootstrap", value: 40},
-    {label: "JavaScript", value: 40}
-  ];
-  
-  // Selección de los elementos SVG
-  var circles = document.querySelectorAll(".skill-progress");
-  
-  // Cálculo del perímetro del círculo
-  var radius = circles[0].getAttribute("r");
-  var circumference = 2 * Math.PI * radius;
-  
-  // Asignación de stroke-dasharray proporcional al valor de habilidad
-  for (var i = 0; i < circles.length; i++) {
-    var skillValue = data[i].value;
-    var dasharrayValue = (circumference * skillValue) / 100 + " " + circumference;
-    circles[i].setAttribute("stroke-dasharray", dasharrayValue);
-  } */
-  document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el contenedor del carrusel
-    var carouselContainer = document.getElementById('hard-carousel');
-
-    // Lista de habilidades con rutas de imágenes y porcentajes
-    var skills = [
-        { name: 'Habilidad 1', image: 'assets/git.jpg', percentage: 80 },
-        { name: 'Habilidad 2', image: 'assets/css.jpg', percentage: 65 },
-        // ... (Repite el patrón para las habilidades restantes)
-        { name: 'Habilidad 15', image: 'ruta-de-la-imagen-15.jpg', percentage: 90 }
-    ];
-
-    // Generar elementos para cada habilidad
-    skills.forEach(function (skill, index) {
-        var iconElement = document.createElement('i');
-        iconElement.className = 'icono' + (index + 1);
-
-        var imgElement = document.createElement('img');
-        imgElement.setAttribute('src', skill.image);
-        imgElement.setAttribute('alt', skill.name);
-
-        var circleElement = document.createElement('div');
-        circleElement.className = 'percentage-circle';
-
-        var svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svgElement.setAttribute('viewBox', '0 0 100 100');
-
-        var circlePath = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circlePath.setAttribute('cx', '50');
-        circlePath.setAttribute('cy', '50');
-        circlePath.setAttribute('r', '45');
-        circlePath.setAttribute('fill', 'none');
-        circlePath.setAttribute('stroke-linecap', 'round');
-        circlePath.setAttribute('stroke-width', '5');
-        circlePath.setAttribute('stroke', '#fff');
-        circlePath.setAttribute('stroke-dasharray', skill.percentage * 1.256 + ', 125.6');
-        circlePath.setAttribute('transform', 'rotate(-90 50 50)');
-
-        svgElement.appendChild(circlePath);
-        circleElement.appendChild(svgElement);
-
-        iconElement.appendChild(imgElement);
-        iconElement.appendChild(circleElement);
-        carouselContainer.appendChild(iconElement);
-    });
-});
-
 /* ----------------------------loginButton-------------------------- */
   const loginButton = document.getElementById('login-button');
 
@@ -79,3 +11,146 @@ else {
 }
 
 
+// Array de objetos para representar las habilidades
+const skillsData = [
+  {
+    name: 'HTML',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
+    percent: '50%'
+  },
+  {
+    name: 'CSS',
+    image: 'https://img.icons8.com/color/452/css3.png',
+    percent: '50%'
+  },
+  {
+    name: 'Bootstrap',
+    image: 'https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-social-logo.png',
+    percent: '50%'
+  },
+  {
+    name: 'JavaScript',
+    image: 'https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png',
+    percent: '50%'
+  },
+  {
+    name: 'GitHub',
+    image: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+    percent: '50%'
+  },
+  {
+    name: 'Git',
+    image: './assets/git.jpg',
+    percent: '50%'
+  },
+  {
+    name: 'Angular',
+    image: './assets/angular.png',
+    percent: '50%'
+  },
+  {
+    name: 'Vue.js',
+    image: './assets/vue.png',
+    percent: '50%'
+  },
+  {
+    name: 'Figma',
+    image: './assets/figma.png',
+    percent: '50%'
+  },
+  {
+    name: 'Materialize',
+    image: './assets/materialize.jpg',
+    percent: '50%'
+  },
+  {
+    name: 'Java',
+    image: './assets/java.jpg',
+    percent: '50%'
+  },
+  {
+    name: 'Postman',
+    image: './assets/python.jpg',
+    percent: '50%'
+  },
+  {
+    name: 'MySQL',
+    image: './assets/mysql.jpg',
+    percent: '50%'
+  },
+  {
+    name: 'PostgreSQL',
+    image: './assets/postgres.jpg',
+    percent: '50%'
+  },
+  {
+    name: 'Python',
+    image: './assets/postman.jpg',
+    percent: '50%'
+  }
+];
+ // Función para generar las habilidades dinámicamente
+/*  function generateSkills() {
+  const hardSkillsContainer = document.querySelector('.hard-skills-container');
+
+  skillsData.forEach(skill => {
+      const skillElement = document.createElement('div');
+      skillElement.classList.add('skill');
+
+      const circleElement = document.createElement('div');
+      circleElement.classList.add('circle');
+      circleElement.style.backgroundColor = '#FDB900';
+
+      const imageElement = document.createElement('img');
+      imageElement.src = skill.image;
+      imageElement.alt = skill.name;
+
+      const percentElement = document.createElement('p');
+      percentElement.classList.add('percent');
+      percentElement.textContent = skill.percent;
+
+      circleElement.appendChild(imageElement);
+      skillElement.appendChild(circleElement);
+      skillElement.appendChild(percentElement);
+
+      hardSkillsContainer.appendChild(skillElement);
+  });
+}
+
+// Llama a la función para generar las habilidades cuando la página está lista
+document.addEventListener('DOMContentLoaded', generateSkills);
+ */
+// Función para generar las habilidades dinámicamente
+
+
+    // Función para generar las habilidades dinámicamente
+    function generateSkills() {
+      const hardSkillsContainer = document.querySelector('.hard-skills-container');
+
+      skillsData.forEach(skill => {
+          const skillElement = document.createElement('i');
+          skillElement.classList.add('skill');
+
+          const circleElement = document.createElement('div');
+          circleElement.classList.add('circle');
+          circleElement.style.backgroundColor = '#FDB900';
+
+          const imageElement = document.createElement('img');
+          imageElement.src = skill.image;
+          imageElement.alt = skill.name;
+
+          const percentElement = document.createElement('p');
+          percentElement.classList.add('percent');
+          percentElement.textContent = skill.percent;
+
+          circleElement.appendChild(imageElement);
+          skillElement.appendChild(circleElement);
+          skillElement.appendChild(percentElement);
+
+          hardSkillsContainer.appendChild(skillElement);
+      });
+  }
+
+  // Llama a la función para generar las habilidades cuando la página está lista
+  generateSkills();
+});

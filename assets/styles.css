@@ -220,52 +220,7 @@ main {
             bottom: 50px;
         }
 
-        /* <!-------HARD SKILLS-------- --> */
-         .section-HardSkills {
-            background-color: rgb(28, 96, 99);
-            position: relative;
-            bottom: 50px;
-        }
-
-        .hardup {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .harddown {
-            display: flex;
-            position: relative;
-            display: inline-flex;
-        }
-
-        .section-HardSkillsh1 {
-            position: relative;
-            background-color: black;
-            text-align: end;
-            color: darkslategray;
-        }
-
-        .skill-progress {
-            width: 70%;
-        }
-
-        #svg1, #svg2, #svg3, #svg4, #svg5, #svg6, .skill-progress {
-            width: 70%;
-        }
-
-        @media only screen and (max-width: 767px) {
-            .section-HardSkills {
-                height: 300px;
-            }
-
-            .skill-progress {
-                width: 200%;
-            }
-
-            #svg1, #svg2, #svg3, #svg4, #svg5, #svg6, .skill-progress {
-                width: 200%;
-            }
-        }
+      
   
 /* PROYECTOS */
 .proyectos {
@@ -303,3 +258,40 @@ main {
 
 
 
+
+
+.col-12 {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .section-HardSkills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hard-skills-container {
+    display: flex;
+    gap: 10px; /* Espacio entre habilidades */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /* Estilos para cada habilidad */
+  .hard-skills-container i {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDB900;
+  }
+
+  .hard-skills-container i img {
+    max-width: 100%;
+    max-height: 100%;
+  }
