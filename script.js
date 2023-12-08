@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
   // Tu código JavaScript para cargar eventos y habilidades aquí
 
@@ -79,8 +78,9 @@ const skillsData = [
     image: './assets/postman.jpg',
     percent: '50%'
   }
-];    // Recorre el array de habilidades y genera el HTML dinámicamente
+];      // Recorre el array de habilidades y genera el HTML dinámicamente
 const skillsContainer = document.querySelector('.skills-container');
+const skillsCarousel = document.querySelector('.skills-carousel');
 
 for (const skill of skillsData) {
     const htmlSkill = `
@@ -96,18 +96,22 @@ for (const skill of skillsData) {
     skillsContainer.innerHTML += htmlSkill;
 }
 
-// Configura el contenedor del carrusel
-const skillsCarousel = document.querySelector('.skills-carousel');
-
 // Configura el tamaño del contenedor del carrusel
 skillsCarousel.style.width = `${skillsData.length * 120}px`;
 
 // Función para animar el carrusel
 function animateCarousel() {
     const scrollAmount = 1; // Puedes ajustar la velocidad de desplazamiento
+    const maxScrollLeft = skillsCarousel.scrollWidth - skillsCarousel.clientWidth;
+
     skillsCarousel.scrollLeft += scrollAmount;
+
+    // Reinicia al inicio cuando llega al final
+    if (skillsCarousel.scrollLeft >= maxScrollLeft) {
+        skillsCarousel.scrollLeft = 0;
+    }
 }
 
 // Inicia la animación del carrusel
-setInterval(animateCarousel, 50); // Puedes ajustar el intervalo de tiempo
+setInterval(animateCarousel, 10); // Puedes ajustar el intervalo de tiempo
 });

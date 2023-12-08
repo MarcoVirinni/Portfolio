@@ -254,7 +254,10 @@ main {
     text-decoration: underline;
 }
 
-
+.skills-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 .iconohtml {
     display: inline-block;
