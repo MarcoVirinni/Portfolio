@@ -47,7 +47,7 @@ const skillsData = [
   {
     name: 'Figma',
     image: 'assets/figma.png',
-    percent: '50%'
+    percent: '20%'
   },
   {
     name: 'Materialize',
@@ -79,23 +79,35 @@ const skillsData = [
     image: './assets/postman.jpg',
     percent: '50%'
   }
-];
-  // Recorre el array de habilidades y genera el HTML dinámicamente
-  const skillsContainer = document.querySelector('.skills-container');
-  // Configura el contenedor para utilizar flexbox
-  skillsContainer.style.display = 'flex';
-  
-  for (const skill of skillsData) {
-      const htmlSkill = `
-          <i class="iconohtml">
-              <svg id="svg1" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" fill="#FDB900" />
-                  <image href="${skill.image}" x="20" y="20" width="60" height="60" />
-                  <path fill="none" stroke-linecap="round" stroke-width="5" stroke="#fff" stroke-dasharray="125.6,125.6" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" />
-                  <text x="20" y="90" text-anchor="middle" dy="7" font-size="20">${skill.percent}</text>
-              </svg>
-          </i>`;
+];    // Recorre el array de habilidades y genera el HTML dinámicamente
+const skillsContainer = document.querySelector('.skills-container');
 
-      skillsContainer.innerHTML += htmlSkill;
-  }
+for (const skill of skillsData) {
+    const htmlSkill = `
+        <div class="iconohtml">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="#FDB900" />
+                <image href="${skill.image}" x="20" y="20" width="60" height="60" />
+                <path fill="none" stroke-linecap="round" stroke-width="5" stroke="#fff" stroke-dasharray="125.6,125.6" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" />
+                <text x="50" y="90" text-anchor="middle" dy="7" font-size="20">${skill.percent}</text>
+            </svg>
+        </div>`;
+
+    skillsContainer.innerHTML += htmlSkill;
+}
+
+// Configura el contenedor del carrusel
+const skillsCarousel = document.querySelector('.skills-carousel');
+
+// Configura el tamaño del contenedor del carrusel
+skillsCarousel.style.width = `${skillsData.length * 120}px`;
+
+// Función para animar el carrusel
+function animateCarousel() {
+    const scrollAmount = 1; // Puedes ajustar la velocidad de desplazamiento
+    skillsCarousel.scrollLeft += scrollAmount;
+}
+
+// Inicia la animación del carrusel
+setInterval(animateCarousel, 50); // Puedes ajustar el intervalo de tiempo
 });

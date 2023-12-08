@@ -256,17 +256,15 @@ main {
 
 
 
-
-
 .iconohtml {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    text-align: center;
     width: 120px; /* Ancho deseado para cada habilidad */
     height: 120px; /* Ajusta la altura según tus preferencias */
     overflow: hidden;
     border-radius: 50%;
     background-color: #f0f0f0; /* Color de fondo para el área del círculo */
+    margin-right: 10px; /* Espacio entre las habilidades */
 }
 
 .iconohtml img {
