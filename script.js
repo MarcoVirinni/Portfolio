@@ -115,20 +115,17 @@ for (const skill of skillsData) {
  // Configura el tamaño del contenedor del carrusel
  skillsCarousel.style.width = `${(skillsData.length + numClones) * 200}px`;
 
- // Función para animar el carrusel usando requestAnimationFrame
+ // Función para animar el carrusel
  function animateCarousel() {
-   const scrollAmount = 5; // Puedes ajustar la velocidad de desplazamiento
+   const scrollAmount = 1; // Puedes ajustar la velocidad de desplazamiento
    skillsCarousel.scrollLeft += scrollAmount;
 
    // Reinicia al inicio cuando llega al final del contenido clonado
    if (skillsCarousel.scrollLeft >= skillsContainer.offsetWidth) {
      skillsCarousel.scrollLeft -= skillsContainer.offsetWidth;
    }
-
-   // Continúa la animación
-   requestAnimationFrame(animateCarousel);
  }
 
  // Inicia la animación del carrusel
- animateCarousel();
+ setInterval(animateCarousel, 5); // Puedes ajustar el intervalo de tiempo
 });
