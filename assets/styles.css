@@ -8,7 +8,7 @@
 /*-----------HEADER----*/
 /*------------------------*/
 .container-fluid {
-    background-color: rgb(242, 245, 245)51);
+    background-color: rgb(24, 26, 26);
 }
 header {
     min-width: auto;
@@ -258,59 +258,19 @@ main {
 
 
 
-
-
-/* .col-12 {
+.iconohtml {
     display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
-} */
-
-.section-HardSkills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hard-skills-container {
-    display: flex;
-    gap: 10px; /* Espacio entre habilidades */
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-/* Estilos para cada habilidad */
-.skill {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #FDB900;
-}
-
-.circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    align-items: center;
+    width: 120px; /* Ancho deseado para cada habilidad */
+    height: 120px; /* Ajusta la altura según tus preferencias */
     overflow: hidden;
-    position: relative;
+    border-radius: 50%;
+    background-color: #f0f0f0; /* Color de fondo para el área del círculo */
 }
 
-.skill img {
+.iconohtml img {
     max-width: 100%;
     max-height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.percent {
-    margin-top: 5px;
-    text-align: center;
-    font-size: 14px;
-    color: #fff;
+    object-fit: cover;
 }

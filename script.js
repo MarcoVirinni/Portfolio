@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
   // Tu código JavaScript para cargar eventos y habilidades aquí
 
@@ -81,9 +82,12 @@ const skillsData = [
 ];
   // Recorre el array de habilidades y genera el HTML dinámicamente
   const skillsContainer = document.querySelector('.skills-container');
+  // Configura el contenedor para utilizar flexbox
+  skillsContainer.style.display = 'flex';
+  
   for (const skill of skillsData) {
       const htmlSkill = `
-          <i class="habilidad">
+          <i class="iconohtml">
               <svg id="svg1" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="45" fill="#FDB900" />
                   <image href="${skill.image}" x="20" y="20" width="60" height="60" />
