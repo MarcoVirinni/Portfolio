@@ -131,6 +131,12 @@ main {
 .GitLink{
     color: whitesmoke
 }
+
+.contacto{
+color: #000;
+}
+
+
 .miEducacion {
     display: flex;
     justify-content: flex-end;

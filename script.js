@@ -117,7 +117,7 @@ for (const skill of skillsData) {
 
   // Función para animar el carrusel
   function animateCarousel() {
-    const scrollAmount = 1; // Puedes ajustar la velocidad de desplazamiento
+    const scrollAmount = 1.5; // Puedes ajustar la velocidad de desplazamiento
     skillsCarousel.scrollLeft += scrollAmount;
 
     // Cuando llega al final, ajusta el desplazamiento para mantener la cinta continua
@@ -129,3 +129,30 @@ for (const skill of skillsData) {
   // Inicia la animación del carrusel
   setInterval(animateCarousel, 10); // Puedes ajustar el intervalo de tiempo
 });
+
+
+   // Función para obtener la ubicación y mostrar el mapa
+   function mostrarMapa() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        // Obtiene las coordenadas
+        const latitud = position.coords.latitude;
+        const longitud = position.coords.longitude;
+
+        // Crea la URL del mapa embebido de Google Maps con las coordenadas
+        const mapaUrl = `https://www.google.com/maps/embed/v1/view?key=TU_API_KEY&center=${latitud},${longitud}&zoom=15`;
+
+        // Crea el elemento iframe y establece sus atributos
+        const iframe = document.createElement('iframe');
+        iframe.src = mapaUrl;
+        iframe.width = '100%';
+        iframe.height = '400';
+        iframe.frameborder = '0';
+        iframe.style.border = '0';
+
+        // Agrega el iframe al contenedor
+        document.getElementById('mapa-container').appendChild(iframe);
+    });
+}
+
+// Llama a la función al cargar la página
+mostrarMapa();
