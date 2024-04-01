@@ -1,31 +1,26 @@
-/*generales*/
-/*----------------------------------------------------------------*/
-
 * {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     max-width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: orange;
-    /*     background-color: rgba(163, 196, 235, 0.575);   */
 }
-
 /*-----------HEADER----*/
 /*------------------------*/
+.container-fluid {
+    background-color: rgb(24, 26, 26);
+}
 header {
     min-width: auto;
 }
-
 #filaHeader {
-    width: 100%;
+    width: 100vw;
     background-color: rgba(15, 147, 191, 0.381);
+    position: absolute;
 }
-
 .left {
     position: relative;
 }
-
 .right {
     display: flex;
     gap: 20px;
@@ -34,68 +29,257 @@ header {
     padding-top: 5px;
     position: relative;
 }
-
 #logoAp {
     max-width: 200px;
 }
-
 #bannerFloyd {
     height: 70vh;
-    min-width: 100vw;
-
+    min-width: 93vw;
 }
-
-.container-fluid{
-background-color: rgb(24, 26, 26);
+#experienced {
+    color: black;
 }
-
+#login-button button {
+    background-color: #fff;
+    border: none;
+    color: #000;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.login-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
 /*---------ARTICLE---------*/
 /*-----------------------------------*/
 .foto {
     align-items: start;
 }
-
 #fotoperfil {
-    border-radius: 100%;
+    border-radius: 50%;
     height: 100%;
     width: 100%;
     position: relative;
-
 }
-
+#fotoperfil:hover {
+    transform: scale(1.5);
+}
+#fotoperfil {
+    transition: transform 0.5s ease-out;
+}
 #acercaDe {
-    border: rgb(196, 28, 16) 5px solid;
     position: relative;
-    /*    bottom: 8em; */
 
 }
 
+.acercaDeMi {
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.9;
+}
+.acercaDeMi>h1 {
+    color: black;
+    filter: brightness(220%);
+}
+.acercaDeMi>p {
+    color: black;
+}
 article {
     display: flex;
     position: relative;
     justify-content: center;
-    padding-left: 50px;
-    bottom: 100px;
+    padding-left: 10px;
+    bottom: 90px;
 }
 
 /*----------MAIN----------*/
 /*-------------------------*/
-
 main {
-    background-color: grey;
+    background-color: black;
+    
 }
-.miEducacion{
-    display: flex;
-    justify-content: flex-end;
-    align-items: end;
-
-}
-#logoFamaf{
-    width: 100%;
-}
-.container-sections{
+.container-sections {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    background-color: blanchedalmond;
+    background-color: wheat;
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    bottom: 110px;
+}
+#h1Exp {
+    color: whitesmoke;
+}
+.miExperiencia {
+    background-image: url(./papel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: brown;
+    text-align: center;
+
+}
+.idiomas {
+    color: chocolate
+}
+.GitLink{
+    color: whitesmoke
+}
+
+.contacto{
+color: #000;
+}
+
+
+.miEducacion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    text-align: right;
+}
+#h1Edu {
+    color: whitesmoke;
+    background-color: #4CAF50;
+   padding: 4px;
+   position: relative;
+   min-width: 105%;
+}
+/* ------------ARGENTINA PROGRAMA--------------------- */
+#logoApr {
+    width: 100%;
+}
+#logoApr:hover {
+    transform: scale(1.1) translateX(10px) translateY(6px);
+    transition: transform 0.5s ease-out;
+    filter: brightness(150%);
+    
+}
+#a-pro {
+    display: inline-flex;
+    align-items: end;
+    border: solid green;
+}
+#a-pro:hover {
+    transform: scale(1.1) translateX(8px);
+    transition: transform 0.5s ease-out;
+    border: white solid 3px;
+}
+/* ------------FAMAF--------------------- */
+ #logoFamaf {
+    width: 100%;
+}
+
+#logoFamaf:hover {
+    transform: scale(1.35)translateX(8px) ;
+    transition: transform 0.5s ease-out;
+    filter: brightness(15000%);
+}
+#a-famaf {
+    display: inline-flex;
+    align-content: end;
+    border: solid green;
+    height: 100px;
+}
+#a-famaf:hover {
+    transform: scale(1.1) translateX(8px);
+    transition: transform 0.5s ease-out;
+    border: white solid 3px;
+}
+ /*-----------------------------ISPC----------------------------- */
+#logoIspc {
+    width: 100%;
+}
+#logoIspc:hover {
+    transform: scale(1.5) translateX(5px);
+    transition: transform 0.5s ease-out;
+    filter: brightness(15000%);
+}
+#a-ispc {
+    display: inline-flex;
+    align-content: end;
+    border: solid green;
+}
+#a-ispc:hover {
+    transform: scale(1.10) translateX(7px);
+    transition: transform 0.5s ease-out;
+    border: white solid 3px;
+}
+  /* Agrega tus estilos CSS aquí */
+        /* <!-------SOFT SKILLS-------- --> */
+        .soft-skills ul {
+            position: relative;
+            bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .soft-skills h1 {
+            display: flex;
+            position: relative;
+            bottom: 50px;
+        }
+
+      
+  
+/* PROYECTOS */
+.proyectos {
+    margin: 20px;
+}
+
+.proyectos h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.proyectos-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.proyectos-table th,
+.proyectos-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.proyectos-table a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.proyectos-table a:hover {
+    text-decoration: underline;
+}
+
+/* HARD SKILLS */
+
+.skills-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.iconohtml {
+    display: inline-block;
+    text-align: center;
+    width: 120px; /* Ancho deseado para cada habilidad */
+    height: 120px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #f0f0f0; /* Color de fondo para el área del círculo */
+    margin-right: 10px; /* Espacio entre las habilidades */
+}
+
+.iconohtml img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
