@@ -1,39 +1,27 @@
-/*generales*/
-/*----------------------------------------------------------------*/
-
 * {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     max-width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: orange;
-  
-/* flex-wrap: wrap; */
 }
-
 /*-----------HEADER----*/
 /*------------------------*/
 .container-fluid {
     background-color: rgb(24, 26, 26);
-    min-width: 10%;
 }
 
 header {
     min-width:100%;
 }
-
 #filaHeader {
 width: 100%;
     background-color: rgba(15, 147, 191, 0.381);
     position: absolute;
-/*     box-shadow: -22px -10px 0px 0px rgba(220, 8, 68, 0.633); */
 }
-
 .left {
     position: relative;
 }
-
 .right {
     display: flex;
     gap: 30px;
@@ -44,47 +32,67 @@ width: 100%;
 
     position: relative;
 }
-
 #logoAp {
     max-width: 200px;
 }
-
 #bannerFloyd {
     height: 70vh;
-    min-width: 115%;
-  }
-
+    min-width: 93vw;
+}
+#experienced {
+    color: black;
+}
+#login-button button {
+    background-color: #fff;
+    border: none;
+    color: #000;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.login-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
 /*---------ARTICLE---------*/
+/*-----------------------------------*/
+.foto {
+    align-items: start;
+}
 #fotoperfil {
     border-radius: 50%;
      height: 70%;
     width: 130%;
     position: relative;
 }
-
-.segundoMind {
-    text-align: right;
+#fotoperfil:hover {
+    transform: scale(1.5);
 }
-
- 
-#acercaDe{
-/*     border: rgb(196, 28, 16) 5px solid; */
+#fotoperfil {
+    transition: transform 0.5s ease-out;
+}
+#acercaDe {
     position: relative;
-    bottom: 110px;
-    height: 40vh;
 
 }
-.acercaDeMi{
 
-/*     border: rgb(196, 28, 16) 5px solid; */
-    position: relative;
-  top: 20px;
-    height: 25vh;
-
+.acercaDeMi {
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.9;
 }
-/* 
-------ARE----YOU--------EXPERIENCED-------------------- */
-.miExperiencia{
+.acercaDeMi>h1 {
+    color: black;
+    filter: brightness(220%);
+}
+.acercaDeMi>p {
+    color: black;
+}
+article {
     display: flex;
     position: relative;
     align-items: flex-end;
@@ -112,126 +120,187 @@ width: 100%;
 
 /*----------MAIN----------*/
 /*-------------------------*/
-
 main {
-
-    background-color: transparent;
-    background-image: url("./escritorioCosmico.jpg");
-}
-
-
-#logoFamaf {
-    width: 100%;
+    background-color: black;
+    
 }
 .container-sections {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    background-color: blanchedalmond;
+    background-color: wheat;
     display: inline;
     vertical-align: middle;
     margin: 0;
     padding: 0;
-    bottom: -200px; 
-    min-width: 100%;
-    background-color: blue;
+    bottom: 110px;
+}
+#h1Exp {
+    color: whitesmoke;
+}
+.miExperiencia {
+    background-image: url(./papel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: brown;
+    text-align: center;
 
 }
+.idiomas {
+    color: chocolate
+}
+.GitLink{
+    color: whitesmoke
+}
+
+.contacto{
+color: #000;
+}
+
+
 .miEducacion {
     display: flex;
-/*     justify-content: right;
-    align-items: end; */
+    justify-content: flex-end;
+    align-items: end;
     text-align: right;
-    position: relative;
-    bottom: 300px;
-
+}
+#h1Edu {
+    color: whitesmoke;
+    background-color: #4CAF50;
+   padding: 4px;
+   position: relative;
+   min-width: 105%;
+}
+/* ------------ARGENTINA PROGRAMA--------------------- */
+#logoApr {
+    width: 100%;
+}
+#logoApr:hover {
+    transform: scale(1.1) translateX(10px) translateY(6px);
+    transition: transform 0.5s ease-out;
+    filter: brightness(150%);
+    
 }
 #a-pro {
     display: inline-flex;
     align-items: end;
+    border: solid green;
+}
+#a-pro:hover {
+    transform: scale(1.1) translateX(8px);
+    transition: transform 0.5s ease-out;
+    border: white solid 3px;
+}
+/* ------------FAMAF--------------------- */
+ #logoFamaf {
+    width: 100%;
 }
 
+#logoFamaf:hover {
+    transform: scale(1.35)translateX(8px) ;
+    transition: transform 0.5s ease-out;
+    filter: brightness(15000%);
+}
 #a-famaf {
     display: inline-flex;
     align-content: end;
+    border: solid green;
+    height: 100px;
 }
-
-/* -----------------------HARD SKILLS------------------- */
-/*--------------------------CIRCULOS----------------------- */
-
-.section-HardSkills {
+#a-famaf:hover {
+    transform: scale(1.1) translateX(8px);
+    transition: transform 0.5s ease-out;
+    border: white solid 3px;
+}
+ /*-----------------------------ISPC----------------------------- */
+#logoIspc {
+    width: 100%;
+}
+#logoIspc:hover {
+    transform: scale(1.5) translateX(5px);
+    transition: transform 0.5s ease-out;
+    filter: brightness(15000%);
+}
+#a-ispc {
     display: inline-flex;
-    justify-content: space-between;
-    align-self: flex-start;
-    align-items: center;
-    position: relative;
-    bottom: 0px;
-    background-color: rgb(28, 96, 99);
+    align-content: end;
+    border: solid green;
 }
-
-.section-HardSkillsh1 {
-    display: inline-flex;
-    justify-content: space-between;
-    align-self: flex-start;
-    align-items: center;
-    position: relative;
-    bottom: 0px;
-    background-color: black;
-    
+#a-ispc:hover {
+    transform: scale(1.10) translateX(7px);
+    transition: transform 0.5s ease-out;
+    border: white solid 3px;
 }
+  /* Agrega tus estilos CSS aquí */
+        /* <!-------SOFT SKILLS-------- --> */
+        .soft-skills ul {
+            position: relative;
+            bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-#svg1 {
-    width: 10%;
-}
+        .soft-skills h1 {
+            display: flex;
+            position: relative;
+            bottom: 50px;
+        }
 
-#svg2 {
-    width: 10%;
-}
-
-#svg3 {
-    width: 10%;
-}
-
-#svg4 {
-    width: 10%;
-}
-
-#svg5 {
-    width: 10%;
-}
-
-#svg6 {
-    width: 10%;
-}
-
-/*--------------------------------------Media Querys----------------------------- */
-
-/*--------------------------<< 575px---&&----991px<<---------------------- */
-
-    /* Estilos para pantallas medianas */
-/*    @media screen and (min-width: 576px) and (max-width: 991px) {
-        .fig {
       
-        }
+  
+/* PROYECTOS */
+.proyectos {
+    margin: 20px;
+}
 
-        article {
- 
+.proyectos h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
 
-        }
-        .miEducacion  {
-   
-        }
-    }
+.proyectos-table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-  */
+.proyectos-table th,
+.proyectos-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
-/*  -------------------------------<<992px------------------ */
+.proyectos-table a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
 
-    /* Estilos para pantallas grandes */
-/*     @media screen and (min-width: 992px) {
-        .fig {
-            float: left;
-            margin-right: 20px;
-        }
-    } */
+.proyectos-table a:hover {
+    text-decoration: underline;
+}
 
+/* HARD SKILLS */
+
+.skills-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.iconohtml {
+    display: inline-block;
+    text-align: center;
+    width: 120px; /* Ancho deseado para cada habilidad */
+    height: 120px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #f0f0f0; /* Color de fondo para el área del círculo */
+    margin-right: 10px; /* Espacio entre las habilidades */
+}
+
+.iconohtml img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
