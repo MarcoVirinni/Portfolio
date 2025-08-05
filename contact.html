@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/fo" type="image/png" />
+      <link rel="icon" href="./assets/fotoPerfil2025.jpg" type="image/png">
+    <title>Marco Virinni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+    crossorigin="anonymous"
+  />
+  <style>
+    body {
+      background-color: #222222; /* fondo más oscuro */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ccc;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .first_text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #3d7ddb; /* azul agradable */
+    }
+    .intro_contact_text {
+      font-size: 1rem;
+      color: #aaa;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      border: 2px solid #3d7ddb;
+      border-radius: 7px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      background-color: #2a2a2a;
+      color: #eee;
+      transition: border-color 0.3s, background-color 0.3s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #888;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #2556a6;
+      background-color: #1e1e1e;
+      outline: none;
+      box-shadow: 0 0 8px #2556a6aa;
+      color: #fff;
+    }
+    .btn-primary {
+      background-color: #2556a6;
+      border: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      transition: background-color 0.3s, transform 0.2s;
+      width: 100%;
+      padding: 10px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background-color: #1b3f74;
+      transform: scale(1.05);
+    }
+    iframe {
+      border-radius: 12px;
+      border: none;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      filter: brightness(0.75);
+      display: block;
+    }
+    .contact-section {
+      background: #2a2a2a;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgb(0 0 0 / 0.6);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h4 {
+      color: #3d7ddb;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    /* Navbar adjustments */
+    .navbar {
+      background-color: #111111 !important;
+    }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: #bbb !important;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-brand:hover {
+      color: #3d7ddb !important;
+    }
+
+    /* Para que el row llene toda la altura disponible y columnas igual altura */
+    main > .row {
+      min-height: 450px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Marco Virinni</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="education.html">Educación</a></li>
+            <li class="nav-item"><a class="nav-link" href="experience.html">Experiencia Laboral</a></li>
+            <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="worktools.html">Herramientas Técnicas</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4" style="height: 100%;">
+      <!-- Mapa -->
+      <div class="col-md-6 d-flex">
+        <section class="contact-section text-center flex-fill">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13621.216733914438!2d-64.19159896143788!3d-31.405744305919267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1702138190226!5m2!1ses!2sar"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <h4>Córdoba, Argentina</h4>
+        </section>
+      </div>
+
+      <!-- Formulario -->
+      <div class="col-md-6 d-flex">
+        <section class="contact-section flex-fill">
+          <div class="first_text text-center mb-4">Contacto</div>
+          <p class="intro_contact_text text-center mb-4">
+            Envíame tu consulta y en la brevedad me comunicare para ayudarte y proporcionarte la información que necesitas.
+          </p>
+          <form action="https://formspree.io/f/mvgqbwpg" method="POST" class="contact-form">
+            <div class="mb-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Ingrese su nombre completo"
+                minlength="4"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                name="email"
+                placeholder="Ingrese su email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                name="message"
+                placeholder="Mensaje"
+                minlength="10"
+                required
+                rows="5"
+              ></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"
+  ></script>
+
+<a href="https://wa.me/5493513730401?text=Hola%20Marco%2C%20estoy%20interesado%20en%20tus%20servicios%20IT%20¿podríamos%20coordinar%20una%20llamada? " 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chatear por WhatsApp">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp" />
+</a>
+
+<style>.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); /* para que el ícono blanco se vea sobre el verde */
+}
+
+</style>
+<footer class="footer bg-dark text-light py-4">
+  <div class="container text-center">
+    <div class="social-icons d-flex justify-content-center align-items-center gap-4 mb-3">
+      <a href="https://github.com/MarcoVirinni" target="_blank" class="text-light" title="GitHub" rel="noopener">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/marco-virinni/" target="_blank" class="text-light" title="LinkedIn" rel="noopener">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+    </div>
+    <p class="mb-0">&copy; 2025 Marco Virinni</p>
+  </div>
+</footer>
+
+<style>
+  .social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #0d6efd !important; /* color bootstrap primary */
+  }
+</style>
+</body>
+
+</html>

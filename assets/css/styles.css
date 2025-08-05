@@ -1,0 +1,272 @@
+* {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/*-----------HEADER----*/
+/*------------------------*/
+.container-fluid {
+    background-color: rgb(24, 26, 26);
+}
+header {
+    min-width: auto;
+}
+#filaHeader {
+    width: 100vw;
+    background-color: rgba(15, 147, 191, 0.381);
+    position: absolute;
+}
+.left {
+    position: relative;
+}
+.right {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: right;
+    padding-top: 5px;
+    position: relative;
+}
+#logoAp {
+    max-width: 200px;
+}
+#bannerFloyd {
+    height: 70vh;
+    min-width: 93vw;
+}
+#experienced {
+    color: black;
+}
+
+/*---------ARTICLE---------*/
+/*-----------------------------------*/
+.foto {
+    align-items: start;
+}
+#fotoperfil {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+#fotoperfil:hover {
+    transform: scale(1.5);
+}
+#fotoperfil {
+    transition: transform 0.5s ease-out;
+}
+#acercaDe {
+    position: relative;
+
+}
+
+.acercaDeMi {
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.9;
+}
+.acercaDeMi>h1 {
+    color: black;
+    filter: brightness(220%);
+}
+.acercaDeMi>p {
+    color: black;
+}
+article {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-left: 10px;
+    bottom: 90px;
+}
+
+/*----------MAIN----------*/
+/*-------------------------*/
+main {
+    background-color: black;
+    
+}
+.container-sections {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    bottom: 110px;
+}
+
+.idiomas {
+    color: chocolate
+}
+.GitLink{
+    color: whitesmoke
+}
+
+
+
+  
+.proyectos {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 2rem 4rem 4rem;
+    border-radius: 8px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+}
+.proyectos h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.proyectos-background {
+    position: fixed;
+    top: 20;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem 4rem 4rem; /* más espacio arriba */
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+.proyectos-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.proyectos-table th,
+.proyectos-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.proyectos-table a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.proyectos-table a:hover {
+    text-decoration: underline;
+}
+
+/* HARD SKILLS */
+
+.skills-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.iconohtml {
+    display: inline-block;
+    text-align: center;
+    width: 120px; /* Ancho deseado para cada habilidad */
+    height: 120px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #f0f0f0; /* Color de fondo para el área del círculo */
+    margin-right: 10px; /* Espacio entre las habilidades */
+}
+
+.iconohtml img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}.miExperiencia {
+    background-image: url("../experience.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 2rem 4rem 2rem; /* más espacio arriba */
+    border-radius: 8px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+.miExperiencia h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.miExperiencia::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* overlay oscuro */
+    z-index: -1;
+    border-radius: 8px;
+}
+
+/* Tarjetas de experiencia */
+.card {
+    border-left: 4px solid #0d6efd; /* Azul Bootstrap */
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+}
+
+.navbar {
+  background-color: #111111 !important;
+  border-bottom: 1px solid #333;
+}
+
+.navbar a,
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #ccc !important;
+}
+
+.navbar a:hover,
+
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      transition: color 0.3s;
+      font-weight: 600;
+      
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-brand:hover {
+      color: #3d7ddb !important;
+
+    }
+
+    /* Para que el row llene toda la altura disponible y columnas igual altura */
+    main > .row {
+      min-height: 450px;
+    }
+    
+
+
+    a i {
+    margin-right: 6px;
+    color: #555;
+}
+a:hover i {
+    color: #007bff; /* o cualquier color que prefieras */
+}
