@@ -119,6 +119,9 @@ main {
     position: relative;
     z-index: 1;
     transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+     width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .proyectos h1 {
     margin-bottom: 1rem;
@@ -145,6 +148,7 @@ main {
 .proyectos-table {
     width: 100%;
     border-collapse: collapse;
+      min-width: 900px; 
 }
 
 .proyectos-table th,
@@ -163,6 +167,8 @@ main {
 .proyectos-table a:hover {
     text-decoration: underline;
 }
+
+
 
 /* HARD SKILLS */
 
@@ -269,4 +275,22 @@ main {
 }
 a:hover i {
     color: #007bff; /* o cualquier color que prefieras */
+}
+#fotoperfil {
+    width: 180px; /* o el tamaño que prefieras */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+}
+
+#fotoperfil:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    #fotoperfil {
+        width: 140px;
+        height: 140px;
+    }
 }
