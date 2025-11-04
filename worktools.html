@@ -1,183 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="es">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./assets/fotoPerfil2025.jpg" type="image/png" />
-  <title>Marco Virinni</title>
-  <link rel="stylesheet" href="./assets/css/worktools.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/fotoPerfil2025.jpg" type="image/png" />
+    <title>Marco Virinni</title>
+    <link rel="stylesheet" href="./assets/css/worktools.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+      crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
+  </head>
 
-  <style>
-    .social-icons a {
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Marco Virinni</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="education.html">Educación</a></li>
+              <li class="nav-item"><a class="nav-link" href="experience.html">Experiencia Laboral</a></li>
+              <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+              <li class="nav-item"><a class="nav-link active" href="worktools.html">Herramientas Técnicas</a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-      color: #0d6efd;
-    }
+    <main class="container my-5">
+      <h1>HERRAMIENTAS TÉCNICAS</h1>
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      justify-items: center;
-    }
-
-    .iconohtml {
-      width: 150px;
-      height: 180px;
-      cursor: default;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .iconohtml p {
-      margin-top: 8px;
-      font-weight: bold;
-      text-align: center;
-      color: #000000;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Marco Virinni</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <!-- Botón para cambiar vista -->
+      <div class="text-center mb-4">
+        <button id="toggleViewBtn" class="btn btn-primary shadow">
+          🔄 Cambiar a vista de barras
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="education.html">Educación</a></li>
-            <li class="nav-item"><a class="nav-link" href="experience.html">Experiencia Laboral</a></li>
-            <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="worktools.html">Herramientas Tecnicas</a></li>
-            <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-          </ul>
+      </div>
+<!-- 🔔 ALERTA SUTIL -->
+<div id="skillNotice" class="skill-notice">
+  <p>
+    ⚡ <strong>Nota:</strong>  Los porcentajes reflejan mi valoración personal, basada en la experiencia práctica, el tiempo de uso y el nivel de confianza que tengo en cada herramienta o tecnología.
+  </p>
+  <button id="closeNotice" class="close-notice">Entendido</button>
+</div>
+</div>
+      <!-- Vista iconos -->
+      <div id="iconView" class="skills-grid"></div>
+
+      <!-- Vista barras -->
+      <section id="barView" style="display:none;">
+        <h2 class="text-center mb-4">Herramientas y Tecnologías</h2>
+        <div class="tool-list"></div>
+      </section>
+
+      <div class="card shadow border-0 mt-5">
+        <div class="card-body">
+          <h5 class="card-title">Compromiso con el Aprendizaje Continuo</h5>
+          <p class="card-text">
+            Estoy constantemente motivado por el deseo de seguir creciendo profesionalmente. Me adapto rápidamente a
+            herramientas nuevas y disfruto aprender tecnologías o metodologías cuando el proyecto lo requiere.
+          </p>
         </div>
       </div>
-    </nav>
-  </header>
+    </main>
 
-  <div class="col-12">
-    <h1>HERRAMIENTAS TECNICAS</h1>
-    <div class="skills-grid"></div>
-  </div>
-
-  <div class="container my-4">
-    <div class="card shadow border-0">
-      <div class="card-body">
-        <h5 class="card-title">Compromiso con el Aprendizaje Continuo</h5>
-        <p class="card-text">
-          Estoy constantemente motivado por el deseo de seguir creciendo profesionalmente. No tengo problema en aprender nuevas tecnologías o metodologías cuando el proyecto lo requiere.
-          En experiencias anteriores, tanto en pasantías como en entornos laborales, me he adaptado rápidamente a herramientas desconocidas y he asumido desafíos con responsabilidad y entusiasmo.
-          Considero que la capacidad de aprender y evolucionar es una de mis principales fortalezas.
-        </p>
+    <footer class="footer bg-dark text-light py-4 mt-5">
+      <div class="container text-center">
+        <div class="social-icons d-flex justify-content-center align-items-center gap-4 mb-3">
+          <a href="https://github.com/MarcoVirinni" target="_blank" class="text-light" title="GitHub" rel="noopener">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/marco-virinni/" target="_blank" class="text-light" title="LinkedIn"
+            rel="noopener">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+        <p class="mb-0">&copy; 2025 Marco Virinni</p>
       </div>
-    </div>
-  </div>
+    </footer>
 
-  <footer class="footer bg-dark text-light py-4">
-    <div class="container text-center">
-      <div class="social-icons d-flex justify-content-center align-items-center gap-4 mb-3">
-        <a href="https://github.com/MarcoVirinni" target="_blank" class="text-light" title="GitHub" rel="noopener">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/marco-virinni/" target="_blank" class="text-light" title="LinkedIn"
-          rel="noopener">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-      </div>
-      <p class="mb-0">&copy; 2025 Marco Virinni</p>
-    </div>
-  </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const skillsData = [
-        { name: "HTML", image: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg", percent: "90%" },
-        { name: "GitHub", image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png", percent: "90%" },
-        { name: "Git", image: "./assets/git.jpg", percent: "90%" },
-        { name: "CSS", image: "https://img.icons8.com/color/452/css3.png", percent: "80%" },
-        { name: "Bootstrap", image: "https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-social-logo.png", percent: "80%" },
-        { name: "JavaScript", image: "https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png", percent: "80%" },
-        { name: "Angular", image: "./assets/angular.png", percent: "80%" },
-        { name: "Java", image: "./assets/java.jpg", percent: "80%" },
-        { name: "Python", image: "./assets/python.jpg", percent: "80%" },
-        { name: "MySQL", image: "./assets/mysql.jpg", percent: "80%" },
-        { name: "Swagger", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg", percent: "80%" },
-        { name: "PostgreSQL", image: "./assets/postgres.jpg", percent: "70%" },
-        { name: "Postman", image: "./assets/postman.jpg", percent: "70%" },
-        { name: "JUnit", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-plain.svg", percent: "70%" },
-        { name: "Mockito", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", percent: "70%" },
-        { name: "Docker", image: "https://www.vectorlogo.zone/logos/docker/docker-icon.svg", percent: "70%" },
-        { name: "React", image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", percent: "60%" },
-        { name: "Azure", image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg", percent: "50%" },
-        { name: "Materialize", image: "./assets/materialize.jpg", percent: "40%" },
-        { name: "Kubernetes", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg", percent: "40%" },
-        { name: "Figma", image: "assets/figma.png", percent: "40%" },
-        {
-  name: "Android Studio",
-  image: "https://developer.android.com/studio/images/studio-icon-preview.svg",
-  percent: "60%"
-},
-{
-  name: "Kotlin",
-  image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png",
-  percent: "60%"
-},
-{
-  name: "Django",
-  image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-  percent: "80%"
-},
-{
-  name: "Spring Boot",
-  image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-  percent: "80%"
-}
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillsData = [
+      { name: "Android Studio", image: "https://developer.android.com/studio/images/studio-icon-preview.svg", percent: "60%" },
+      { name: "Angular", image: "https://img.favpng.com/0/25/9/angularjs-typescript-javascript-png-favpng-bpNhTEWsc4HhJ8gKUtg7W3ZU6.jpg", percent: "80%" },
+      { name: "Bootstrap", image: "https://hossaini.gallerycdn.vsassets.io/extensions/hossaini/bootstrap-intellisense/1.1.6/1692877389926/Microsoft.VisualStudio.Services.Icons.Default", percent: "80%" },
+      { name: "CSS", image: "https://img.icons8.com/color/452/css3.png", percent: "75%" },
+      { name: "Django", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg", percent: "80%" },
+      { name: "Excel", image: "https://static.vecteezy.com/system/resources/previews/022/101/030/original/microsoft-excel-logo-transparent-free-png.png", percent: "75%" },
+      { name: "Figma", image: "https://www.oscillononline.com/wp-content/uploads/2022/10/diseno-grafico-figma-1024x683.jpg", percent: "60%" },
+      { name: "Git", image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg", percent: "85%" },
+      { name: "GitHub", image: "https://spng.pngfind.com/pngs/s/16-162397_github-logo-logo-github-hd-png-download.png", percent: "90%" },
+      { name: "Google Sheets", image: "https://www.nicepng.com/png/full/685-6858734_google-sheets-logo-png.png", percent: "70%" },
+      { name: "HTML", image: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg", percent: "85%" },
+      { name: "Java", image: "https://tse4.mm.bing.net/th/id/OIP.y-c95_Cs6ah_K7DAItsb1AAAAA?pid=ImgDet&w=186&h=186&c=7&dpr=1,2&o=7&rm=3", percent: "80%" },
+      { name: "JavaScript", image: "https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png", percent: "85%" },
+      { name: "Kotlin", image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png", percent: "60%" },
+      { name: "MySQL", image: "./assets/mysql.jpg", percent: "80%" },
+      { name: "PostgreSQL", image: "./assets/postgres.jpg", percent: "70%" },
+      { name: "Power BI", image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg", percent: "60%" },
+      { name: "Python", image: "https://wallpapercave.com/wp/wp8661113.jpg", percent: "88%" },
+      { name: "React", image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", percent: "80%" },
+      { name: "Spring Boot", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", percent: "80%" },
+      { name: "VS Code", image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg", percent: "95%" },
+      { name: "Word", image: "https://www.bing.com/th/id/OIP.FrFdzuHRp8uPsKYcp7NOKwHaER?w=263&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.2&pid=3.1&rm=2", percent: "70%" },
+      { name: "WordPress", image: "https://upload.wikimedia.org/wikipedia/commons/2/20/WordPress_logo.svg", percent: "60%" }
+    ];
 
-      ];
+    const iconView = document.getElementById("iconView");
+    const barView = document.querySelector(".tool-list");
+    const toggleBtn = document.getElementById("toggleViewBtn");
 
-      skillsData.sort((a, b) => parseFloat(b.percent) - parseFloat(a.percent));
-      const skillsGrid = document.querySelector(".skills-grid");
+    // 🔄 Restaurar vista guardada
+    const savedView = localStorage.getItem("toolView");
+    if (savedView === "bars") {
+      iconView.style.display = "none";
+      document.getElementById("barView").style.display = "block";
+      toggleBtn.textContent = "🔄 Cambiar a vista de íconos";
+    }
+  document.addEventListener("DOMContentLoaded", function () {
+    const notice = document.getElementById("skillNotice");
+    const closeBtn = document.getElementById("closeNotice");
 
-      for (const skill of skillsData) {
-        const circumference = Math.PI * 2 * 40;
-        const dashArray = (parseFloat(skill.percent) / 100) * circumference;
-        const strokeColor = parseFloat(skill.percent) >= 70 ? "#4CAF50" : "#FFC107";
+    // Ocultar si ya fue vista
+    if (localStorage.getItem("skillNoticeSeen") === "true") {
+      notice.style.display = "none";
+    }
 
-        const htmlSkill = `
-          <div class="iconohtml" title="${skill.name}">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="45" fill="#000000" />
-              <image href="${skill.image}" x="20" y="20" width="60" height="60" />
-              <path fill="none" stroke-linecap="round" stroke-width="5" stroke="${strokeColor}" stroke-dasharray="${dashArray},${circumference}" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" />
-              <text x="50" y="17" text-anchor="middle" dy="7" font-size="22" font-weight="bold" fill="${strokeColor}">${skill.percent}</text>
-            </svg>
-            <p>${skill.name}</p>
-          </div>`;
-
-        skillsGrid.innerHTML += htmlSkill;
-      }
+    // Cerrar y guardar estado
+    closeBtn.addEventListener("click", () => {
+      notice.classList.add("opacity-0", "scale-95", "transition-all");
+      setTimeout(() => notice.remove(), 400);
+      localStorage.setItem("skillNoticeSeen", "true");
     });
-  </script>
-</body>
+  });
+    // 🟢 Render vista de íconos (orden por porcentaje DESC)
+    const sortedByPercent = [...skillsData].sort((a, b) => parseFloat(b.percent) - parseFloat(a.percent));
 
-</html>
+    sortedByPercent.forEach(skill => {
+      const circumference = Math.PI * 2 * 40;
+      const dashArray = (parseFloat(skill.percent) / 100) * circumference;
+      const strokeColor =
+        parseFloat(skill.percent) >= 80 ? "#4CAF50" :
+        parseFloat(skill.percent) >= 60 ? "#FFC107" : "#FF5252";
+
+      const htmlSkill = `
+        <div class="iconohtml" title="${skill.name}">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="#000000" />
+            <image href="${skill.image}" x="20" y="20" width="60" height="60" />
+            <path fill="none" stroke-linecap="round" stroke-width="5" stroke="${strokeColor}"
+              stroke-dasharray="${dashArray},${circumference}"
+              d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" />
+            <text x="50" y="17" text-anchor="middle" dy="7" font-size="22" font-weight="bold" fill="${strokeColor}">
+              ${skill.percent}
+            </text>
+          </svg>
+          <p>${skill.name}</p>
+        </div>`;
+      iconView.innerHTML += htmlSkill;
+    });
+
+    // 📊 Render vista de barras (orden alfabético)
+    const sortedByName = [...skillsData].sort((a, b) => a.name.localeCompare(b.name));
+
+    sortedByName.forEach(skill => {
+      const color =
+        parseFloat(skill.percent) >= 80 ? "#4CAF50" :
+        parseFloat(skill.percent) >= 60 ? "#FFC107" : "#FF5252";
+      barView.innerHTML += `
+        <div class="tool">
+          <span class="tool-name">${skill.name}</span>
+          <div class="progress-bar">
+            <div class="progress" style="width:${skill.percent}; background-color:${color}"></div>
+          </div>
+        </div>`;
+    });
+
+    // 🖱️ Toggle entre vistas
+    toggleBtn.addEventListener("click", () => {
+      const showingIcons = iconView.style.display !== "none";
+      iconView.style.display = showingIcons ? "none" : "grid";
+      document.getElementById("barView").style.display = showingIcons ? "block" : "none";
+      toggleBtn.textContent = showingIcons ? "🔄 Cambiar a vista de íconos" : "🔄 Cambiar a vista de barras";
+      localStorage.setItem("toolView", showingIcons ? "bars" : "icons");
+    });
+  });
+ window.addEventListener("DOMContentLoaded", () => {
+    const notice = document.getElementById("skillNotice");
+    setTimeout(() => {
+      notice.classList.remove("opacity-0", "translate-y-[-10px]");
+      notice.classList.add("opacity-100", "translate-y-0");
+    }, 200);
+  });
+
+  // Cerrar con animación de salida
+  document.getElementById("closeNotice").addEventListener("click", () => {
+    const notice = document.getElementById("skillNotice");
+    notice.classList.add("opacity-0", "translate-y-[-10px]");
+    setTimeout(() => notice.remove(), 400);
+  });
+</script>
+  </body>
+
+  </html>

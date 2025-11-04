@@ -1,348 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Virinni - Proyectos</title>
   <link rel="icon" href="./assets/fotoPerfil2025.jpg" type="image/png">
-  <title>Marco Virinni</title>
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+    h1 { color: #074f96; margin-bottom: 30px; font-weight: bold; }
+    .navbar { background-color: #074f96 !important; }
+    .navbar a { color: white !important; }
+    .navbar a:hover { text-decoration: underline; }
+    .table thead { background-color: #074f96; color: white; }
+    .badge { margin: 2px; font-size: 0.8rem; }
+    .proyectos { padding: 50px; background-size: cover; transition: opacity 1s ease-in-out; }
+    .table-responsive { background-color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .footer { margin-top: 40px; }
+    .social-icons a { transition: transform 0.3s ease, color 0.3s ease; }
+    .social-icons a:hover { transform: scale(1.2); color: #0d6efd; }
+    .filters { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:12px; }
+    .tech-filters { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:16px; }
+    .year-row { background-color:#074f96; color:#fff; text-align:center; font-weight:700; }
+    @media (max-width:720px){ .proyectos{padding:20px} .filters input, .filters select { width:100%!important } }
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    .tech-filters .form-check-label {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #212529;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .tech-filters .form-check-input { cursor: pointer; accent-color: #0d6efd; }
+    .tech-filters .form-check:hover .form-check-label {
+      color: #0d6efd;
+      background-color: rgba(13,110,253,0.08);
+      text-shadow: 0 0 4px rgba(13,110,253,0.4);
+    }
+    .tech-filters .form-check-input:checked + .form-check-label {
+      color: #fff;
+      background-color: #0d6efd;
+      text-shadow: none;
+      box-shadow: 0 0 6px rgba(13,110,253,0.6);
+    }
+    .tech-filters .form-check:hover {
+      box-shadow: 0 0 8px rgba(13,110,253,0.4);
+      border-radius: 6px;
+      background-color: rgba(13,110,253,0.05);
+      transition: box-shadow 0.3s, background-color 0.3s;
+    }
+    .tech-filters { position: relative; overflow: hidden; }
+    .tech-filters::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(13,110,253,0.35) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  </style>
 </head>
-
 <body>
-  <header>
-    <!-------------- HEADER-------- -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Marco Virinni</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="education.html">Educación</a></li>
-            <li class="nav-item"><a class="nav-link" href="experience.html">Experiencia Laboral</a></li>
-            <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="worktools.html">Herramientas Tecnicas</a></li>
-            <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-          </ul>
-        </div>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Marco Virinni</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="education.html">Educación</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experiencia Laboral</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="worktools.html">Herramientas Técnicas</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+        </ul>
       </div>
-    </nav>
-  </header>
-  <div class="proyectos-background"></div>
+    </div>
+  </nav>
 
-  <section class="proyectos">
-    <h1>Proyectos Realizados Cronológicamente</h1>
+  <section class="proyectos text-center">
+    <div class="container">
+      <h1>Proyectos Realizados</h1>
 
-    <table class="proyectos-table">
-      <thead>
-        <tr>
-          <th>Año</th>
-          <th>Proyecto</th>
-          <th>Role / Tareas realizadas</th>
-          <th>Descripción</th>
-          <th>Enlace</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="5" style="background-color: #074f96; text-align: center; font-size: 1.2em; font-weight: bold;">
-            2023
-          </td>
-        </tr>
-        <tr>
-          <td>2023 Enero</td>
-          <td>Liga de Hockey -- MindHub, Bootcamp de Argentina Programa. </td>
-          <td>Desarrollador FrontEnd HTML-CSS-BOOTSTRAP</td>
-          <td>Bootcamp Front End de página de Liga de Hockey. Sitio Web estático.</td>
-          <td><a href="https://MarcoVirinni.github.io/MightyDucksHockeyLeague/index.html">Visitar Página</a></td>
-        </tr>
-        <tr>
-          <td>2023 Febrero y Marzo</td>
-          <td>Amazing Events -- MindHub, Bootcamp de Argentina Programa. </td>
-          <td>Desarrollador Front End HTML CSS BOOTSTRAP JS</td>
-          <td>Bootcamp Front End de página de Eventos. (MindHub retiro el acceso CORS por lo que la data en Json no esta
-            disponible para el fetching.)</td>
-          <td><a href="https://MarcoVirinni.github.io/Amazing_events/index.html">Visitar Página</a></td>
-        </tr>
-        <tr>
-          <td>2023 Agosto a Octubre</td>
-          <td>Homebaking -- MindHub, Bootcamp de Argentina Programa.</td>
-          <td>Desarrollador Back End Java Spring Boot Gradle PostgreSQL</td>
-          <td>Bootcamp Back End de Homebanking brindado por Minhub Argentina Programa.</td>
-          <td><a href="https://github.com/MarcoVirinni/homeBanking">Ver Código</a></td>
-        </tr>
-        <tr>
-          <td>2023 Octubre Diciembre</td>
-          <td>Biblioteca -- SXXI & NEORIS </td>
-          <td>Desarrollador Back End Java Gradle GUI MySQL</td>
-          <td>Programación orientada a objetos. Registro y validaciones.</td>
-          <td><a href="https://github.com/MarcoVirinni/BibliotecaJava/tree/Entrega/src/main/java/biblioteca">Ver
-              Código</a>
-            <!--           <a href="https://github.com/MarcoVirinni/CRUDJavaMySQL/tree/GUITask3/target/classes/Main">Ver Código</a></td> -->
-        </tr>
-        <tr>
-          <td>2023 Octubre Diciembre</td>
-          <td>JAVA UTN Argentina Programa</td>
-          <td>Desarrollador Java</td>
-          <td>Data Access Object Pattern Design - Trabajo Grupal </td>
-          <td><a href="https://github.com/ProyectoJavaUtn/TrabajoPractico">Ver Código</a></td>
-        </tr>
-        <tr>
-          <td>2023 Proyecto Anual</td>
-          <td>PlanetSuperheroes. E-commerce -- ISPC.</td>
-          <td>Desarrollador Full Stack (JavaScript & Python & SQL MySQL).</td>
-          <td>Proyecto integrador grupal del 1° año del ISPC, cuyo objetivo fue comprender el diseño y desarrollo de un
-            sitio web estático. Se trabajó de manera colaborativa con enfoque en programación orientada a objetos
-            utilizando JavaScript y Python sin el uso de frameworks. Persistencia de Datos en MySQL Workbench a través
-            del
-            programa en Python. También se trabajo con UML y DER y metologías Ágiles SCRUM. Deploy con github pages.
-          </td>
-          <td><a href="https://ispc-desarrolladores-2-0.github.io/PFS-Ecommerce-2023/" target="_blank">Visitar
-              Página</a>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="5" style="background-color: #074f96; text-align: center; font-size: 1.2em; font-weight: bold;">
-            2024
-          </td>
-        </tr>
+      <div class="filters">
+        <input type="text" id="filterInput" class="form-control w-50" placeholder="Buscar proyecto, descripción o tecnología...">
+        <select id="roleSelect" class="form-select w-25">
+          <option value="">Todos los Roles</option>
+        </select>
+        <button id="clearBtn" class="btn btn-outline-secondary">Limpiar filtros</button>
+      </div>
 
-        <!-- 2024 -->
-        <tr>
-          <td>Enero Febrero 2024</td>
-          <td>Educaflex (2024)-- Simulaciones Laborales en No Country.</td>
-          <td>Desarrollador BackEnd Java SpringBoot JWT</td>
-          <td>Simulacion Laboral en No Country. Sitio web diseñado para brindar y o recibir clases online desde tu
-            hogar,
-            con horarios flexibles, viviendo una experiencia integral y conveniente para cada tipo de edades. </td>
-          <td><a href="https://c16-35-m-java-evif.onrender.com/">Visitar Página</a></td>
-        </tr>
-        <tr>
-          <td>Marzo Abril 2024</td>
-          <td>FooDelivery -- Simulaciones Laborales en No Country.</td>
-          <td>Desarrollador FrontEnd Angular 17 Standalone RxJS Signals JWT Interfaces </td>
-          <td>Simulacion Laboral en No Country. Sitio web con una interfaz intuitiva y funcionalidades avanzadas,
-            Foodelivery optimiza la experiencia tanto para los restaurantes como para los usuarios, garantizando un
-            servicio de entrega de alimentos eficiente y satisfactorio., los restaurantes pueden mostrar su variedad de
-            platillos, actualizar su disponibilidad y gestionar sus inventarios de manera sencilla.Los usuarios pueden
-            explorar el menú, realizar pedidos con facilidad y estar informados sobre el estado de sus entregas desde el
-            momento en que se realizan hasta que llegan a su destino.</td>
-          <td><!-- <a href="https://foodeliveries-7bfb7717acda.herokuapp.com/home">Enlace</a> -->
-            <a href="https://www.youtube.com/watch?v=5soQRCvfhuw">Ver Demo</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Abril Julio 2024 Proyecto Cuatrimestral</td>
-          <td>E-commerce de Venta de Cómics -- ISPC.</td>
-          <td>Desarrollador Full Stack (JAngular & Django Rest Framework & SQL MySQL).</td>
-          <td>Proyecto integrador grupal del 2° año del ISPC 1er cuatrimestre, cuyo objetivo fue trabajar con frameworks
-            eficientemente. Persistencia de Datos en MySQL Workbench a través del
-            programa en Python. También se trabajo con UML y DER y metologías Ágiles SCRUM. Deploy con render </td>
-          <td><a href="https://www.youtube.com/watch?v=kNJ0ySpz3XU&t=1s" target="_blank">Ver Demo Técnica</a></td>
-        </tr>
-        <tr>
-          <td>Agosto Noviembre 2024 Proyecto Cuatrimestral</td>
-          <td>Musiverse -- ISPC</td>
-          <td>Desarrollador Python y Bases de Datos </td>
-          <td>
-            Proyecto integrador grupal desarrollado para el módulo "Innovación en Gestión de Datos" (TSCDIA - ISPC,
-            2024).
-            Musiverse es un sistema integral de gestión musical y control de accesos, implementado en Python. Integra un
-            completo CRUD de usuarios, control de accesos, algoritmos de búsqueda y ordenamiento, y un módulo de
-            análisis
-            de datos pluviales.
-            Se trabajó con diferentes tipos de bases de datos y estructuras, aplicando conceptos clave de persistencia,
-            validación y visualización estadística. El sistema incluye una biblioteca musical personalizada, gestión de
-            playlists, y un motor de recomendaciones, con almacenamiento en archivos y consultas SQL.
-          </td>
-          <td><a href="">Ver Código</a></td>
-        </tr>
+      <div class="tech-filters" id="techFilters"></div>
 
-        <tr>
-          <td> Agosto - Diciembre 2024 Proyecto Cuatrimestral</td>
-          <td>PlanetSuperheroes Mobile</td>
-          <td>Desarrollador Mobile Andorid Studio Java/Kotlin</td>
-          <td>La app ofrece una experiencia fluida en Android con
-            funcionalidades como registro, login, gestión de perfil, carrito de compras, historial de órdenes y sección
-            de soporte. Cuenta con un backend robusto en Django REST Framework, base de datos MySQL. También se
-            desarrolló un sistema
-            completo de navegación, consumo de datos con Retrofit, UI con Jetpack Compose, y funcionalidades reactivas
-            usando ViewModel y LiveData.</td>
-          <td><a href="https://drive.google.com/file/d/1vSrO2fAua-KClXLYzwbCXReoqYzCLbDK/view">Ver Demo</a></td>
-        </tr>
-        <!-- 2025 -->
-        <tr>
-          <td colspan="5" style="background-color: #074f96; text-align: center; font-size: 1.2em; font-weight: bold;">
-            2025
-          </td>
-        </tr>
-        <tr>
-          <td>Enero – Marzo 2025</td>
-          <td>Al Parque – Red Social</td>
-          <td>Desarrollador Full Stack<br>Angular 19 · React · Python · Django REST Framework</td>
-          <td>
-            "Al Parque" es un proyecto individual donde desarrollé una red social utilizando tres APIs conectadas de
-            forma monolítica: Usuario, Parque y Actividades.
-            Rutas Protegidas y gestion de usuarios CRUD de actividades y parques desde mi FrontEnd.
-            Integré Cloudinary para la carga y visualización de archivos multimedia, persistiendo únicamente las rutas
-            en una base de datos PostgreSQL.
-            Implementé un sistema de autenticación robusto con Simple JWT. Además, añadí un gráfico de cálculo de IMC
-            utilizando Python con Pandas y Matplotlib.
-            Posteriormente reutilicé el backend en una versión React del frontend, logrando implementar con éxito el
-            módulo de autenticación y registro basado en JWT.
-          </td>
-          <td><a href="https://al-parque.vercel.app/home" target="_blank">Visitar Página</a></td>
-        </tr>
-
-        <tr>
-          <td> Abril a Julio 2025 Proyecto Cuatrimestral</td>
-          <td>Estadísticas con React</td>
-          <td>Desarrollador FrontEnd React Vite</td>
-          <td>Esta aplicación React es una herramienta interactiva y modular que permite explorar productos obtenidos
-            desde una API pública, ofreciendo filtros avanzados, ordenamiento y estadísticas dinámicas en tiempo real.
-            Con una arquitectura basada en componentes reutilizables y sin estado interno, la app muestra información
-            clave como el producto más caro y más barato, promedios de descuento y rating, y visualizaciones gráficas de
-            la distribución por categoría. También permite exportar los datos en formatos como CSV, JSON y Excel, e
-            incluye una conversión opcional de precios a dólares. Utiliza React con Hooks, Axios, Recharts y Tailwind
-            CSS para una experiencia moderna, responsiva y fluida. Despliegue en Netlify.</td>
-          <td><a href="https://analisisestadisticosconreact.netlify.app/">Visitar Página</a></td>
-        </tr>
-
-        <tr>
-          <td>Abril – Julio 2025<br>Proyecto Cuatrimestral</td>
-          <td>PlanetSuperheroes <br> E-ccomerce Web App</td>
-          <td>Desarrollador Full Stack<br>Angular 17 · Python · Django REST Framework</td>
-          <td>
-            Proyecto Final – Tecnicatura Superior en Desarrollo Web y Aplicaciones Digitales
-            <br>
-
-            Me desempeñé como Scrum Master y desarrollador Full Stack, liderando la integración de la API externa de
-            Mercado Pago (Checkout Pro) para pagos online. Realicé una profunda refactorización del backend, logrando un
-            código más limpio, eficiente y mantenible. Configuré los ambientes de desarrollo y producción, gestionando
-            el despliegue completo de la base de datos, el web service y el frontend, este último alojado en Vercel.
-
-            Además, implementé la integración con la API de Cloudinary para la gestión de metadata multimedia, y llevé a
-            cabo pruebas manuales exhaustivas para garantizar la calidad del software. Gestioné usuarios y tareas dentro
-            del equipo, promoviendo buenas prácticas y metodologías ágiles para asegurar una colaboración eficiente. El
-            proyecto fue desplegado en Render (backend) y Vercel (frontend).
-          </td>
-          <td><a href="https://planetsuperheroes.vercel.app/home" target="_blank">Visitar Página</a></td>
-        </tr>
-        <tr>
-          <td> Abril a Julio 2025 Proyecto Cuatrimestral</td>
-          <td>PlanetSuperheroes Mobile</td>
-          <td>Desarrollador Mobile Andorid Studio Java/Kotlin</td>
-          <td>
-            Esta versión es una evolución del proyecto cuatrimestral anterior (2024), con mejoras sustanciales en
-            funcionalidad, rendimiento y experiencia de usuario.
-            Se realizaron pruebas exhaustivas, se refactorizó el código, se mejoró la integración con la API de Mercado
-            Pago, Cloudinary para archivos metadata multimedia y se incorporó autenticación más segura.
-            También se añadieron nuevas funcionalidades como sistema de notificaciones y eventos.
-          </td>
-          <td><a href="https://github.com/Web-Developers2-0/2025-Practica_Profesionalizante/tree/main/mobile">Ver Código</a></td>
-        </tr>
-        <tr>
-          <td>Junio 2025</td>
-          <td>Cancionero de Rock</td>
-          <td>Desarrollador Mobile Andorid Studio Java/Kotlin</td>
-          <td>Es una aplicación mobile sencilla a pedido de una banda de Rock amiga, la cual
-            necesitaba tener
-            al alcance los acordes de las canciones a practicar y la version de la misma para escucharla offline.</td>
-          <td><a href="https://youtube.com/shorts/_uJHPZEggQ4?feature=share">Ver Demo</a></td>
-        </tr>
-        <tr>
-          <td>Abril – Julio 2025<br>Proyecto Cuatrimestral</td>
-          <td>Cluster Fusion -Analisis de Datos Ataques Cardíacos</td>
-          <td>Analisis y Estadística de Datos Python</td>
-          <td>Es un proyecto de análisis de datos y estadística aplicado a la salud, basado en un dataset real. Se
-            emplearon técnicas de Analisis Exploratorio de Datos (EDA), limpieza y validación de datos, y estadística
-            descriptiva para identificar
-            variables biomédicas críticas.Se realizaron gráficos utilizando Python, Pandas y Matplotlib, se construyeron
-            perfiles predictivos
-            que permiten anticipar riesgos cardíacos y apoyar decisiones clínicas.</td>
-          <td><a href="https://github.com/ISPC-Cluster-Fusion/Modulo_Analista_de_Datos_2025/tree/main">Ver Código</a>
-          </td>
-        <tr>
-          <td>Agosto 2025</td>
-          <td>Voluntarios Caritas Iglesia San José</td>
-          <td>Java Desktop GUI</td>
-          <td>Estoy realizando un proyecto sin fines de lucro donde se me pidió digitalizar un proceso de registro de
-            beneficiarios de donaciones, el cual estoy desarrollando con Java GUI.</td>
-          <td><a href="#" style="pointer-events:none; color: gray; text-decoration:none;">Próximamente</a></td>
-        </tr>
-        <tr>
-          <td>Abril 2024 - Agosto 2025</td>
-          <td>Portfolio Personal </td>
-          <td>HTML CSS y JS - Github Pages</td>
-          <td>Antes y despues de un año seguimos mejorando el portafolio. Se le podria agregar un modo claro/oscuro o Español/Ingles en un futuro.</td>
-          <td><a href="https://www.youtube.com/watch?v=n6qZBaYMzes&feature=youtu.be">Ver Antes y Despues</a>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle proyectos-table">
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Proyecto</th>
+              <th>Rol / Tareas</th>
+              <th>Tecnologías</th>
+              <th>Descripción</th>
+              <th>Enlace</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyProjects"></tbody>
+        </table>
+      </div>
+    </div>
   </section>
-  <script>const images = [
-      "assets/proyectos2.png",
-      "assets/proyectos.png",
-      "assets/proyectos2.png",
-      "assets/proyectos.png"
-    ];
 
-    let current = 0;
-    const section = document.querySelector('.proyectos');
-
-    // Establecer imagen inicial
-    section.style.backgroundImage = `url("${images[current]}")`;
-
-    setInterval(() => {
-      section.style.opacity = 0;
-
-      setTimeout(() => {
-        current = (current + 1) % images.length;
-        section.style.backgroundImage = `url("${images[current]}")`;
-        section.style.opacity = 1;
-      }, 1000);
-    }, 30000);
-
-  </script>
   <footer class="footer bg-dark text-light py-4">
     <div class="container text-center">
       <div class="social-icons d-flex justify-content-center align-items-center gap-4 mb-3">
-        <a href="https://github.com/MarcoVirinni" target="_blank" class="text-light" title="GitHub" rel="noopener">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/marco-virinni/" target="_blank" class="text-light" title="LinkedIn"
-          rel="noopener">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
+        <a href="https://github.com/MarcoVirinni" target="_blank" class="text-light" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/marco-virinni/" target="_blank" class="text-light" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
       </div>
       <p class="mb-0">&copy; 2025 Marco Virinni</p>
     </div>
   </footer>
 
-  <style>
-    .social-icons a {
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-      color: #0d6efd;
-      /* color bootstrap primary */
+<script>
+const allProjects = [
+  {anio:2023, fecha:"Enero", nombre:"Liga de Hockey -- MindHub", rol:"FrontEnd Developer", tecnologias:["HTML","CSS","BOOTSTRAP"], descripcion:"Bootcamp Front End de página de Liga de Hockey. Sitio Web estático.", link:"https://MarcoVirinni.github.io/MightyDucksHockeyLeague/index.html"},
+  {anio:2023, fecha:"Febrero y Marzo", nombre:"Amazing Events -- MindHub", rol:"FrontEnd Developer", tecnologias:["HTML","CSS","BOOTSTRAP","JS"], descripcion:"Bootcamp Front End de página de Eventos. (MindHub retiro el acceso CORS).", link:"https://MarcoVirinni.github.io/Amazing_events/index.html"},
+  {anio:2023, fecha:"Agosto a Octubre", nombre:"Homebaking -- MindHub", rol:"BackEnd Developer", tecnologias:["Java","Spring Boot","Gradle","PostgreSQL"], descripcion:"Bootcamp Back End de Homebanking brindado por Mindhub Argentina Programa.", link:"https://github.com/MarcoVirinni/homeBanking"},
+  {anio:2023, fecha:"Octubre a Diciembre", nombre:"Biblioteca -- SXXI & NEORIS", rol:"BackEnd Developer", tecnologias:["Java","Gradle","GUI","MySQL"], descripcion:"Programación orientada a objetos. Registro y validaciones.", link:"https://github.com/MarcoVirinni/BibliotecaJava/tree/Entrega/src/main/java/biblioteca"},
+  {anio:2023, fecha:"Octubre a Diciembre", nombre:"JAVA UTN Argentina Programa", rol:"Java Developer", tecnologias:["Java"], descripcion:"Data Access Object Pattern Design - Trabajo Grupal", link:"https://github.com/ProyectoJavaUtn/TrabajoPractico"},
+  {anio:2023, fecha:"Proyecto Anual", nombre:"PlanetSuperheroes. E-commerce -- ISPC", rol:"Full Stack Developer", tecnologias:["JavaScript","Python","MySQL"], descripcion:"Proyecto integrador grupal del 1° año del ISPC. POO, persistencia MySQL, UML/DER, SCRUM. Deploy con github pages.", link:"https://ispc-desarrolladores-2-0.github.io/PFS-Ecommerce-2023/"},
+  {anio:2024, fecha:"Enero-Febrero", nombre:"Educaflex (Simulación No Country)", rol:"BackEnd Developer", tecnologias:["Java","SpringBoot","JWT"], descripcion:"Simulación Laboral en No Country. Sitio web para clases online.", link:"https://c16-35-m-java-evif.onrender.com/"},
+  {anio:2024, fecha:"Marzo-Abril", nombre:"FooDelivery (Simulación No Country)", rol:"FrontEnd Developer", tecnologias:["Angular 17","RxJS","Signals","JWT"], descripcion:"Simulación Laboral: app de pedidos y gestión para restaurantes y usuarios.", link:"https://www.youtube.com/watch?v=5soQRCvfhuw"},
+  {anio:2024, fecha:"Abril-Julio", nombre:"E-commerce de Venta de Cómics -- ISPC", rol:"Full Stack Developer", tecnologias:["Angular","Django REST Framework","MySQL"], descripcion:"Proyecto integrador del 2° año ISPC. Persistencia en MySQL, UML/DER, SCRUM.", link:"https://www.youtube.com/watch?v=kNJ0ySpz3XU&t=1s"},
+  {anio:2024, fecha:"Agosto-Noviembre", nombre:"Musiverse -- ISPC", rol:"Python Developer / Database Developer", tecnologias:["Python","SQL","CRUD"], descripcion:"Sistema de gestión musical y control de accesos.", link:"#"},
+  {anio:2024, fecha:"Agosto-Diciembre", nombre:"PlanetSuperheroes Mobile (2024)", rol:"Mobile Developer", tecnologias:["Android Studio","Java","Kotlin","Django REST","MySQL"], descripcion:"App Android con registro, login, carrito, historial y backend en Django REST.", link:"https://drive.google.com/file/d/1vSrO2fAua-KClXLYzwbCXReoqYzCLbDK/view"},
+  {anio:2025, fecha:"Enero – Marzo", nombre:"Al Parque – Red Social", rol:"Full Stack Developer", tecnologias:["Angular 19","React","Django REST","PostgreSQL","Cloudinary","Python"], descripcion:"Red social con tres APIs, JWT, Cloudinary y gráfico IMC con Pandas/Matplotlib.", link:"https://al-parque.vercel.app/home"},
+  {anio:2025, fecha:"Abril – Julio", nombre:"Estadísticas con React", rol:"FrontEnd Developer", tecnologias:["React","Vite","Tailwind","Axios","Recharts"], descripcion:"App React para explorar productos desde API pública con filtros y estadísticas.", link:"https://analisisestadisticosconreact.netlify.app/"},
+  {anio:2025, fecha:"Abril – Julio", nombre:"PlanetSuperheroes — E-commerce Web App", rol:"Full Stack Developer / Scrum Master", tecnologias:["Angular 17","Python","Django REST","Cloudinary","Mercado Pago","MySQL"], descripcion:"Proyecto final Tecnicatura: integración Mercado Pago, refactor backend, despliegue Render/Vercel.", link:"https://planetsuperheroes.vercel.app/home"},
+  {anio:2025, fecha:"Abril – Julio", nombre:"PlanetSuperheroes Mobile (2025)", rol:"Mobile Developer", tecnologias:["Android Studio","Java","Kotlin","Django REST","Cloudinary"], descripcion:"Evolución del mobile 2024 con mejoras y notificaciones.", link:"https://github.com/Web-Developers2-0/2025-Practica_Profesionalizante/tree/main/mobile"},
+  {anio:2025, fecha:"Junio", nombre:"Cancionero de Rock", rol:"Mobile Developer", tecnologias:["Android Studio","Java","Kotlin"], descripcion:"App para banda con acordes y reproductor offline.", link:"https://youtube.com/shorts/_uJHPZEggQ4?feature=share"},
+  {anio:2025, fecha:"Abril – Julio", nombre:"Cluster Fusion - Análisis Ataques Cardíacos", rol:"Data Analyst", tecnologias:["Python","Pandas","Matplotlib","Scikit-learn"], descripcion:"EDA, limpieza, visualización y perfiles predictivos aplicados a salud.", link:"https://github.com/ISPC-Cluster-Fusion/Modulo_Analista_de_Datos_2025/tree/main"},
+  {anio:2025, fecha:"Agosto", nombre:"Voluntarios Cáritas Iglesia San José", rol:"BackEnd Developer", tecnologias:["Python","Django","Hostinger","Ubuntu","Figma"], descripcion:"Digitalización del registro de beneficiarios; VPS en Hostinger y panel Django Admin.", link:"https://www.parroquiasanjose-caritas.store/admin/login/"},
+  {anio:2024, fecha:"Abril 2024 - Agosto 2025", nombre:"Portfolio Personal", rol:"FrontEnd Developer", tecnologias:["HTML","CSS","JS","Bootstrap"], descripcion:"Portfolio personal en evolución. Pendiente modo oscuro y multilanguage.", link:"https://www.youtube.com/watch?v=n6qZBaYMzes&feature=youtu.be"}
+];
+
+const tbody = document.getElementById('tbodyProjects');
+const roleSelect = document.getElementById('roleSelect');
+const techFiltersWrap = document.getElementById('techFilters');
+const searchInput = document.getElementById('filterInput');
+const clearBtn = document.getElementById('clearBtn');
+
+const roles = [...new Set(allProjects.map(p => p.rol))].sort();
+roles.forEach(r=>{
+  const opt = document.createElement('option');
+  opt.value = r;
+  opt.textContent = r;
+  roleSelect.appendChild(opt);
+});
+
+const techs = [...new Set(allProjects.flatMap(p => p.tecnologias))].sort((a,b)=> a.localeCompare(b));
+techs.forEach(t=>{
+  const id = 'tech_' + t.replace(/\s+/g,'_').replace(/[^\w\-]/g,'');
+  const div = document.createElement('div');
+  div.className = 'form-check form-check-inline';
+  div.innerHTML = `<input class="form-check-input tech-checkbox" type="checkbox" id="${id}" value="${t}"><label class="form-check-label" for="${id}">${t}</label>`;
+  techFiltersWrap.appendChild(div);
+});
+
+function escapeHtml(s){
+  if(!s) return '';
+  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+}
+
+function render(){
+  tbody.innerHTML = '';
+  const q = (searchInput.value || '').toLowerCase().trim();
+  const role = roleSelect.value;
+  const checkedTechs = Array.from(document.querySelectorAll('.tech-checkbox:checked')).map(c => c.value);
+
+  const years = [...new Set(allProjects.map(p=>p.anio))].sort((a,b)=> a - b);
+
+  years.forEach(year=>{
+    const projectsOfYear = allProjects.filter(p => p.anio === year);
+    const matched = projectsOfYear.filter(p=>{
+      const hayTexto = (p.nombre + ' ' + p.descripcion + ' ' + (p.tecnologias||[]).join(' ') + ' ' + (p.fecha||'')).toLowerCase().includes(q);
+      const hayRol = !role || p.rol === role;
+      const hayTech = checkedTechs.length === 0 || p.tecnologias.some(t => checkedTechs.includes(t));
+      return hayTexto && hayRol && hayTech;
+    });
+
+    if(matched.length > 0){
+      const trYear = document.createElement('tr');
+      trYear.className = 'year-row';
+      trYear.innerHTML = `<td colspan="6">${year}</td>`;
+      tbody.appendChild(trYear);
+
+      matched.forEach(p=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(p.fecha)}</td>
+          <td><strong>${escapeHtml(p.nombre)}</strong></td>
+          <td>${escapeHtml(p.rol)}</td>
+          <td>${(p.tecnologias||[]).map(t=>`<span class="badge bg-info text-dark">${escapeHtml(t)}</span>`).join(' ')}</td>
+          <td class="text-start">${escapeHtml(p.descripcion)}</td>
+          <td><a class="btn btn-outline-primary btn-sm" href="${p.link || '#'}" target="_blank">Ver</a></td>`;
+        tbody.appendChild(tr);
+      });
     }
-  </style>
+  });
+}
+
+searchInput.addEventListener('input', render);
+roleSelect.addEventListener('change', render);
+document.addEventListener('change', e=>{
+  if(e.target.matches('.tech-checkbox')) render();
+});
+clearBtn.addEventListener('click', ()=>{
+  searchInput.value = '';
+  roleSelect.value = '';
+  document.querySelectorAll('.tech-checkbox').forEach(c=>c.checked = false);
+  render();
+});
+
+const images = ["assets/proyectos2.png","assets/proyectos.png"];
+let idx = 0;
+const proySection = document.querySelector('.proyectos');
+if(proySection){
+  proySection.style.backgroundImage = `url("${images[idx]}")`;
+  setInterval(()=>{
+    proySection.style.opacity = 0;
+    setTimeout(()=>{
+      idx = (idx + 1) % images.length;
+      proySection.style.backgroundImage = `url("${images[idx]}")`;
+      proySection.style.opacity = 1;
+    }, 700);
+  }, 30000);
+}
+
+render();
+</script>
+</body>
+</html>
