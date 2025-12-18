@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Tu código JavaScript para cargar eventos y habilidades aquí
 
 // Array de objetos para representar las habilidades
 const skillsData = [
@@ -78,7 +77,8 @@ const skillsData = [
     image: './assets/postman.jpg',
     percent: '50%'
   }
-];      // Recorre el array de habilidades y genera el HTML dinámicamente
+];     
+// Recorre el array de habilidades y genera el HTML dinámicamente
 const skillsContainer = document.querySelector('.skills-container');
 const skillsCarousel = document.querySelector('.skills-carousel');
 
