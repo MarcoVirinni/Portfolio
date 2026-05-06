@@ -1,138 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marco Virinni - Proyectos</title>
-  <link rel="icon" href="./assets/fotoPerfil2025.jpg" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
-    h1 { color: #074f96; margin-bottom: 30px; font-weight: bold; }
-    .navbar { background-color: #074f96 !important; }
-    .navbar a { color: white !important; }
-    .navbar a:hover { text-decoration: underline; }
-    .table thead { background-color: #074f96; color: white; }
-    .badge { margin: 2px; font-size: 0.8rem; }
-    .proyectos { padding: 50px; background-size: cover; transition: opacity 1s ease-in-out; }
-    .table-responsive { background-color: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    .footer { margin-top: 40px; }
-    .social-icons a { transition: transform 0.3s ease, color 0.3s ease; }
-    .social-icons a:hover { transform: scale(1.2); color: #0d6efd; }
-    .filters { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:12px; }
-    .tech-filters { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:16px; }
-    .year-row { background-color:#074f96; color:#fff; text-align:center; font-weight:700; }
-    @media (max-width:720px){ .proyectos{padding:20px} .filters input, .filters select { width:100%!important } }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marco Virinni - Proyectos</title>
 
-    .tech-filters .form-check-label {
-      cursor: pointer;
-      transition: all 0.3s ease;
-      color: #212529;
-      font-weight: 500;
-      padding: 3px 8px;
-      border-radius: 6px;
-    }
-    .tech-filters .form-check-input { cursor: pointer; accent-color: #0d6efd; }
-    .tech-filters .form-check:hover .form-check-label {
-      color: #0d6efd;
-      background-color: rgba(13,110,253,0.08);
-      text-shadow: 0 0 4px rgba(13,110,253,0.4);
-    }
-    .tech-filters .form-check-input:checked + .form-check-label {
-      color: #fff;
-      background-color: #0d6efd;
-      text-shadow: none;
-      box-shadow: 0 0 6px rgba(13,110,253,0.6);
-    }
-    .tech-filters .form-check:hover {
-      box-shadow: 0 0 8px rgba(13,110,253,0.4);
-      border-radius: 6px;
-      background-color: rgba(13,110,253,0.05);
-      transition: box-shadow 0.3s, background-color 0.3s;
-    }
-    .tech-filters { position: relative; overflow: hidden; }
-    .tech-filters::before {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(13,110,253,0.35) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-  </style>
+<link rel="icon" href="./assets/fotoPerfil2025.jpg">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+body { background:#f8f9fa; font-family:'Segoe UI'; }
+
+.proyectos {
+  padding:50px;
+  background-size:cover;
+  position:relative;
+  color:white;
+}
+
+.proyectos::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.container { position:relative; z-index:1; }
+
+.filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:15px;
+}
+
+.tech-filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.tech-filters input{ display:none; }
+
+.tech-filters label{
+  cursor:pointer;
+  color:#ffc107;
+  border:1px solid #ffc107;
+  padding:6px 12px;
+  border-radius:20px;
+  background:rgba(255,193,7,0.15);
+  font-weight:600;
+  transition:.25s;
+}
+
+.tech-filters input:checked + label{
+  background:#0d6efd;
+  color:white;
+  border-color:#0d6efd;
+}
+
+/* CARDS */
+.project-card{
+  background:white;
+  color:#212529;
+  border-radius:16px;
+  padding:18px;
+  height:100%;
+  transition:.3s;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.year-title{
+  margin-top:30px;
+  font-weight:bold;
+  font-size:1.4rem;
+  border-left:5px solid #0d6efd;
+  padding-left:10px;
+}
+
+.tech-badge{ margin:2px; font-size:0.75rem; }
+
+</style>
 </head>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Marco Virinni</a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="education.html">Educación</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experiencia Laboral</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="worktools.html">Herramientas Técnicas</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<section class="proyectos text-center">
+<div class="container">
 
-  <section class="proyectos text-center">
-    <div class="container">
-      <h1>Proyectos Realizados</h1>
+<h1>Proyectos Realizados</h1>
 
-      <div class="filters">
-        <input type="text" id="filterInput" class="form-control w-50" placeholder="Buscar proyecto, descripción o tecnología...">
-        <select id="roleSelect" class="form-select w-25">
-          <option value="">Todos los Roles</option>
-        </select>
-        <button id="clearBtn" class="btn btn-outline-secondary">Limpiar filtros</button>
-      </div>
+<div class="filters">
+<input id="filterInput" class="form-control w-50" placeholder="Buscar...">
+<select id="roleSelect" class="form-select w-25">
+<option value="">Todos los Roles</option>
+</select>
+<button id="clearBtn" class="btn btn-outline-light">Limpiar</button>
+</div>
 
-      <div class="tech-filters" id="techFilters"></div>
+<div id="techFilters" class="tech-filters"></div>
 
-      <div class="table-responsive">
-        <table class="table table-striped table-bordered align-middle proyectos-table">
-          <thead>
-            <tr>
-              <th>Año</th>
-              <th>Proyecto</th>
-              <th>Rol / Tareas</th>
-              <th>Tecnologías</th>
-              <th>Descripción</th>
-              <th>Enlace</th>
-            </tr>
-          </thead>
-          <tbody id="tbodyProjects"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+<p id="resultsCount"></p>
 
-  <footer class="footer bg-dark text-light py-4">
-    <div class="container text-center">
-      <div class="social-icons d-flex justify-content-center align-items-center gap-4 mb-3">
-        <a href="https://github.com/MarcoVirinni" target="_blank" class="text-light" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
-        <a href="https://www.linkedin.com/in/marco-virinni/" target="_blank" class="text-light" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
-      </div>
-      <p class="mb-0">&copy; 2025 Marco Virinni</p>
-    </div>
-  </footer>
+<div id="projectsContainer" class="row g-4"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+</section>
 
 <script>
+
+// 🔥 MAP ROLES (mejorado)
+function mapRole(role){
+  const r = role.toLowerCase();
+  if(r.includes('scrum')) return 'Management';
+  if(r.includes('data')) return 'Data';
+  if(r.includes('mobile')) return 'Mobile';
+  if(r.includes('full')) return 'Full Stack';
+  if(r.includes('front')) return 'Frontend';
+  if(r.includes('back')) return 'Backend';
+  if(r.includes('java')) return 'Backend';
+  if(r.includes('python')) return 'Backend';
+  return 'Other';
+}
+
+// 🔥 DATA ORIGINAL COMPLETA (NO TOCADA)
 const allProjects = [
   {anio:2023, fecha:"Enero", nombre:"Liga de Hockey -- MindHub", rol:"FrontEnd Developer", tecnologias:["HTML","CSS","BOOTSTRAP"], descripcion:"Bootcamp Front End de página de Liga de Hockey. Sitio Web estático.", link:"https://MarcoVirinni.github.io/MightyDucksHockeyLeague/index.html"},
   {anio:2023, fecha:"Febrero y Marzo", nombre:"Amazing Events -- MindHub", rol:"FrontEnd Developer", tecnologias:["HTML","CSS","BOOTSTRAP","JS"], descripcion:"Bootcamp Front End de página de Eventos. (MindHub retiro el acceso CORS).", link:"https://MarcoVirinni.github.io/Amazing_events/index.html"},
@@ -155,100 +155,91 @@ const allProjects = [
   {anio:2024, fecha:"Abril 2024 - Agosto 2025", nombre:"Portfolio Personal", rol:"FrontEnd Developer", tecnologias:["HTML","CSS","JS","Bootstrap"], descripcion:"Portfolio personal en evolución. Pendiente modo oscuro y multilanguage.", link:"https://www.youtube.com/watch?v=n6qZBaYMzes&feature=youtu.be"}
 ];
 
-const tbody = document.getElementById('tbodyProjects');
+// 🔥 resto igual (render cards)
+const container = document.getElementById('projectsContainer');
+const searchInput = document.getElementById('filterInput');
 const roleSelect = document.getElementById('roleSelect');
 const techFiltersWrap = document.getElementById('techFilters');
-const searchInput = document.getElementById('filterInput');
-const clearBtn = document.getElementById('clearBtn');
 
-const roles = [...new Set(allProjects.map(p => p.rol))].sort();
-roles.forEach(r=>{
-  const opt = document.createElement('option');
-  opt.value = r;
-  opt.textContent = r;
-  roleSelect.appendChild(opt);
+[...new Set(allProjects.map(p=>mapRole(p.rol)))]
+.forEach(r=> roleSelect.innerHTML += `<option>${r}</option>`);
+
+[...new Set(allProjects.flatMap(p=>p.tecnologias))]
+.forEach(t=>{
+  techFiltersWrap.innerHTML += `<input type="checkbox" id="${t}" value="${t}"><label for="${t}">${t}</label>`;
 });
-
-const techs = [...new Set(allProjects.flatMap(p => p.tecnologias))].sort((a,b)=> a.localeCompare(b));
-techs.forEach(t=>{
-  const id = 'tech_' + t.replace(/\s+/g,'_').replace(/[^\w\-]/g,'');
-  const div = document.createElement('div');
-  div.className = 'form-check form-check-inline';
-  div.innerHTML = `<input class="form-check-input tech-checkbox" type="checkbox" id="${id}" value="${t}"><label class="form-check-label" for="${id}">${t}</label>`;
-  techFiltersWrap.appendChild(div);
-});
-
-function escapeHtml(s){
-  if(!s) return '';
-  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
-}
 
 function render(){
-  tbody.innerHTML = '';
-  const q = (searchInput.value || '').toLowerCase().trim();
-  const role = roleSelect.value;
-  const checkedTechs = Array.from(document.querySelectorAll('.tech-checkbox:checked')).map(c => c.value);
+  container.innerHTML='';
+  let count=0;
 
-  const years = [...new Set(allProjects.map(p=>p.anio))].sort((a,b)=> a - b);
+  const terms = searchInput.value.toLowerCase().split(' ').filter(Boolean);
+  const role = roleSelect.value;
+  const techs = [...document.querySelectorAll('.tech-filters input:checked')].map(c=>c.value);
+
+  const years = [...new Set(allProjects.map(p=>p.anio))].sort((a,b)=>b-a);
 
   years.forEach(year=>{
-    const projectsOfYear = allProjects.filter(p => p.anio === year);
-    const matched = projectsOfYear.filter(p=>{
-      const hayTexto = (p.nombre + ' ' + p.descripcion + ' ' + (p.tecnologias||[]).join(' ') + ' ' + (p.fecha||'')).toLowerCase().includes(q);
-      const hayRol = !role || p.rol === role;
-      const hayTech = checkedTechs.length === 0 || p.tecnologias.some(t => checkedTechs.includes(t));
-      return hayTexto && hayRol && hayTech;
+    const filtered = allProjects.filter(p=>{
+      if(p.anio!==year) return false;
+      const text=(p.nombre+p.descripcion+p.tecnologias.join(' ')).toLowerCase();
+      return terms.every(t=>text.includes(t))
+        && (!role || mapRole(p.rol)===role)
+        && (techs.length===0 || p.tecnologias.some(t=>techs.includes(t)));
     });
 
-    if(matched.length > 0){
-      const trYear = document.createElement('tr');
-      trYear.className = 'year-row';
-      trYear.innerHTML = `<td colspan="6">${year}</td>`;
-      tbody.appendChild(trYear);
+    if(filtered.length){
+      container.innerHTML += `<div class="col-12"><div class="year-title">${year}</div></div>`;
+      count+=filtered.length;
 
-      matched.forEach(p=>{
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${escapeHtml(p.fecha)}</td>
-          <td><strong>${escapeHtml(p.nombre)}</strong></td>
-          <td>${escapeHtml(p.rol)}</td>
-          <td>${(p.tecnologias||[]).map(t=>`<span class="badge bg-info text-dark">${escapeHtml(t)}</span>`).join(' ')}</td>
-          <td class="text-start">${escapeHtml(p.descripcion)}</td>
-          <td><a class="btn btn-outline-primary btn-sm" href="${p.link || '#'}" target="_blank">Ver</a></td>`;
-        tbody.appendChild(tr);
+      filtered.forEach(p=>{
+        container.innerHTML += `
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+
+            <strong>${p.nombre}</strong><br>
+            <small>${p.fecha}</small>
+
+            <div class="mt-2">
+              <span class="badge bg-primary">${mapRole(p.rol)}</span><br>
+              <small class="text-muted">${p.rol}</small>
+            </div>
+
+            <div class="mt-2">
+              ${p.tecnologias.map(t=>`<span class="badge bg-warning text-dark tech-badge">${t}</span>`).join('')}
+            </div>
+
+            <p class="mt-2">${p.descripcion}</p>
+
+            <a href="${p.link}" target="_blank" class="btn btn-sm btn-primary">
+              <i class="fas fa-external-link-alt"></i> Ver
+            </a>
+
+          </div>
+        </div>`;
       });
     }
   });
+
+  document.getElementById('resultsCount').textContent = `Mostrando ${count} proyectos`;
 }
 
-searchInput.addEventListener('input', render);
-roleSelect.addEventListener('change', render);
-document.addEventListener('change', e=>{
-  if(e.target.matches('.tech-checkbox')) render();
+searchInput.addEventListener('input',render);
+roleSelect.addEventListener('change',render);
+document.addEventListener('change',e=>{
+  if(e.target.matches('.tech-filters input')) render();
 });
-clearBtn.addEventListener('click', ()=>{
-  searchInput.value = '';
-  roleSelect.value = '';
-  document.querySelectorAll('.tech-checkbox').forEach(c=>c.checked = false);
+
+document.getElementById('clearBtn').onclick=()=>{
+  searchInput.value='';
+  roleSelect.value='';
+  document.querySelectorAll('.tech-filters input').forEach(c=>c.checked=false);
   render();
-});
-
-const images = ["assets/proyectos2.png","assets/proyectos.png"];
-let idx = 0;
-const proySection = document.querySelector('.proyectos');
-if(proySection){
-  proySection.style.backgroundImage = `url("${images[idx]}")`;
-  setInterval(()=>{
-    proySection.style.opacity = 0;
-    setTimeout(()=>{
-      idx = (idx + 1) % images.length;
-      proySection.style.backgroundImage = `url("${images[idx]}")`;
-      proySection.style.opacity = 1;
-    }, 700);
-  }, 30000);
-}
+};
 
 render();
+
 </script>
+
 </body>
 </html>
